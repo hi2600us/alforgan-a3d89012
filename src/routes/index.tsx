@@ -477,15 +477,28 @@ function Index() {
               {L.donateCta}
             </a>
           </div>
-          <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-1">
-            {L.worksList.map((w, i) => (
-              <li key={i} className="flex items-baseline gap-3 py-2 border-b border-border/60">
-                <span className="font-display text-[color:var(--gold)] text-xs tabular-nums w-6 shrink-0" dir="ltr">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <span className="text-sm text-foreground/85 leading-snug">{w}</span>
-              </li>
-            ))}
+          <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+            {L.worksList.map((w, i) => {
+              const Icon = worksIcons[i] ?? Building2;
+              return (
+                <li
+                  key={i}
+                  className="group relative flex items-center gap-3 rounded-xl border border-border/70 bg-card/70 backdrop-blur-sm px-4 py-3 hover:border-[color:var(--gold)] hover:shadow-[var(--shadow-elegant)] transition-all"
+                >
+                  <span
+                    className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-[color:var(--emerald-deep)]/15 text-[color:var(--emerald-deep)] bg-[color:var(--sand)]/60 group-hover:bg-[color:var(--emerald-deep)] group-hover:text-[color:var(--sand)] transition-colors"
+                  >
+                    <Icon size={18} strokeWidth={1.75} />
+                  </span>
+                  <div className="flex-1 min-w-0">
+                    <span className="block text-[10px] tracking-[0.2em] text-[color:var(--gold)] font-display tabular-nums" dir="ltr">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <span className="block text-sm text-foreground/90 leading-snug">{w}</span>
+                  </div>
+                </li>
+              );
+            })}
           </ul>
         </div>
       </section>
