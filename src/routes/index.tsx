@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import buildingAsset from "@/assets/furqan-building.png.asset.json";
+import buildingSkeleton from "@/assets/furqan-building-skeleton.png.asset.json";
 import patternImg from "@/assets/pattern.jpg";
 import quranImg from "@/assets/quran-study.jpg";
 import mosqueImg from "@/assets/mosque-interior.jpg";
@@ -90,6 +91,23 @@ const t = {
     bankAccount: "اسم الحساب",
     bankIban: "رقم الآيبان",
     bankNote: "يُرجى التواصل مع ناظر الوقف لتأكيد التحويل واستلام الإيصال.",
+    timelineKicker: "الجدول الزمني",
+    timelineTitle: "المرحلة الحالية: الهيكل الإنشائي",
+    timelineBody: "اكتمل الهيكل الخرساني للمبنى. نخطط لإنجاز جميع أعمال التشطيب وتشغيل المشروع خلال سنة واحدة بإذن الله.",
+    timelineSteps: [
+      { t: "المرحلة الأولى", d: "الهيكل الإنشائي (مكتمل)", s: "done" },
+      { t: "المرحلة الثانية", d: "أعمال التشطيب الداخلي والخارجي", s: "now" },
+      { t: "المرحلة الثالثة", d: "التكييف والكهرباء والميكانيكا", s: "next" },
+      { t: "المرحلة الرابعة", d: "الأثاث والفرش والتسليم والتشغيل", s: "next" },
+    ],
+    timelineEta: "المدة المتوقعة للإنجاز: سنة واحدة",
+    partnersKicker: "شركاؤنا والجهات الداعمة",
+    partnersTitle: "بدعم وإشراف من",
+    partners: [
+      { name: "الهيئة العامة للأوقاف", role: "الجهة المُشرفة", url: "https://awqaf.gov.sa/ar" },
+      { name: "جمعية تلاوة لتحفيظ القرآن الكريم ببلقرن", role: "الجهة المستفيدة", url: "https://www.quran-balqarn.org.sa/" },
+      { name: "Goodstack", role: "منصة التبرعات الدولية", url: "https://goodstack.org" },
+    ],
   },
   en: {
     dir: "ltr" as const,
@@ -159,6 +177,23 @@ const t = {
     bankAccount: "Account name",
     bankIban: "IBAN",
     bankNote: "Please contact the trustee to confirm your transfer and receive a receipt.",
+    timelineKicker: "Project timeline",
+    timelineTitle: "Current phase: Structural skeleton",
+    timelineBody: "The concrete skeleton of the building is complete. We plan to finish all the works and bring the project into operation within one year, inshaAllah.",
+    timelineSteps: [
+      { t: "Phase 1", d: "Structural skeleton (completed)", s: "done" },
+      { t: "Phase 2", d: "Interior & exterior finishing works", s: "now" },
+      { t: "Phase 3", d: "HVAC, electrical & mechanical", s: "next" },
+      { t: "Phase 4", d: "Furniture, handover & operation", s: "next" },
+    ],
+    timelineEta: "Expected completion: one year",
+    partnersKicker: "Partners & supporting bodies",
+    partnersTitle: "Under the supervision and support of",
+    partners: [
+      { name: "General Authority of Awqaf", role: "Supervisory authority", url: "https://awqaf.gov.sa/ar" },
+      { name: "Tilawah Quran Memorization Society — Balqarn", role: "Beneficiary society", url: "https://www.quran-balqarn.org.sa/" },
+      { name: "Goodstack", role: "International donation platform", url: "https://goodstack.org" },
+    ],
   },
 };
 
@@ -183,6 +218,8 @@ function Index() {
             <a href="#about" className="hover:text-[color:var(--emerald-deep)] transition">{L.nav.about}</a>
             <a href="#project" className="hover:text-[color:var(--emerald-deep)] transition">{L.nav.project}</a>
             <a href="#works" className="hover:text-[color:var(--emerald-deep)] transition">{L.nav.works}</a>
+            <a href="#timeline" className="hover:text-[color:var(--emerald-deep)] transition">{isRtl ? "الجدول الزمني" : "Timeline"}</a>
+            <a href="#partners" className="hover:text-[color:var(--emerald-deep)] transition">{isRtl ? "الشركاء" : "Partners"}</a>
             <a href="#trustee" className="hover:text-[color:var(--emerald-deep)] transition">{L.nav.trustee}</a>
           </div>
           <div className="flex items-center gap-3">
@@ -246,17 +283,18 @@ function Index() {
 
             <div className="lg:col-span-6 relative">
               <div className="absolute -inset-6 rounded-2xl opacity-30 blur-3xl" style={{ background: "var(--gradient-gold)" }} />
-              <div className="relative rounded-2xl overflow-hidden shadow-[var(--shadow-elegant)] border border-white/10">
+              <div className="relative flex items-end justify-center min-h-[420px]">
                 <img
-                  src={buildingAsset.url}
-                  alt="Al-Furqan endowment building in Balqarn at sunset"
-                  className="w-full h-auto block"
-                  width={1080}
-                  height={817}
+                  src={buildingSkeleton.url}
+                  alt="Al-Furqan endowment building skeleton phase in Balqarn"
+                  className="w-full h-auto block drop-shadow-[0_25px_45px_rgba(0,0,0,0.45)]"
+                  width={1408}
+                  height={792}
                 />
-                <div className="absolute bottom-0 inset-x-0 p-5 bg-gradient-to-t from-black/80 to-transparent text-[color:var(--sand)]">
-                  <div className="text-[10px] tracking-[0.25em] uppercase text-[color:var(--gold-soft)]">{lang === "ar" ? "موقع المشروع" : "Project location"}</div>
-                  <div className="font-display text-lg mt-1">{lang === "ar" ? "مدينة عفراء · بلقرن · عسير" : "Afra · Balqarn · Asir"}</div>
+                <div className="absolute -bottom-2 inset-x-0 flex justify-center">
+                  <span className="px-4 py-1.5 rounded-full text-[10px] tracking-[0.25em] uppercase text-[color:var(--ink)] font-medium" style={{ background: "var(--gradient-gold)" }}>
+                    {lang === "ar" ? "المرحلة الحالية · الهيكل الإنشائي" : "Current phase · Skeleton"}
+                  </span>
                 </div>
               </div>
             </div>
@@ -347,6 +385,81 @@ function Index() {
       </section>
 
       {/* IMPACT */}
+      {/* TIMELINE */}
+      <section id="timeline" className="py-24 lg:py-32 bg-[color:var(--sand)]/40 border-y border-border">
+        <div className="max-w-7xl mx-auto px-6 lg:px-10">
+          <div className="max-w-3xl">
+            <Kicker>{L.timelineKicker}</Kicker>
+            <h2 className="font-display text-4xl md:text-5xl text-[color:var(--emerald-deep)] mt-4 leading-tight">{L.timelineTitle}</h2>
+            <p className="mt-5 text-lg text-foreground/80 leading-relaxed">{L.timelineBody}</p>
+          </div>
+          <ol className="mt-14 grid md:grid-cols-2 lg:grid-cols-4 gap-5 relative">
+            {L.timelineSteps.map((step, i) => {
+              const isDone = step.s === "done";
+              const isNow = step.s === "now";
+              return (
+                <li key={i} className={`relative rounded-2xl p-7 border bg-card transition ${isNow ? "border-[color:var(--gold)] shadow-[var(--shadow-elegant)]" : "border-border"}`}>
+                  <div className="flex items-center gap-3">
+                    <span
+                      className={`w-9 h-9 rounded-full flex items-center justify-center text-xs font-display ${
+                        isDone
+                          ? "bg-[color:var(--emerald-deep)] text-[color:var(--sand)]"
+                          : isNow
+                          ? "text-[color:var(--ink)]"
+                          : "bg-muted text-muted-foreground"
+                      }`}
+                      style={isNow ? { background: "var(--gradient-gold)" } : undefined}
+                      dir="ltr"
+                    >
+                      {isDone ? "✓" : String(i + 1).padStart(2, "0")}
+                    </span>
+                    <span className="text-[10px] tracking-[0.25em] uppercase text-muted-foreground">
+                      {isDone ? (isRtl ? "مكتمل" : "Done") : isNow ? (isRtl ? "قيد التنفيذ" : "In progress") : (isRtl ? "قادم" : "Upcoming")}
+                    </span>
+                  </div>
+                  <h3 className="font-display text-xl mt-5 text-[color:var(--emerald-deep)]">{step.t}</h3>
+                  <p className="text-sm text-muted-foreground mt-2 leading-relaxed">{step.d}</p>
+                </li>
+              );
+            })}
+          </ol>
+          <div className="mt-10 inline-flex items-center gap-3 px-5 py-3 rounded-full border border-[color:var(--gold)]/40 bg-card">
+            <span className="w-2 h-2 rounded-full bg-[color:var(--gold)] animate-pulse" />
+            <span className="text-sm text-[color:var(--emerald-deep)] font-display">{L.timelineEta}</span>
+          </div>
+        </div>
+      </section>
+
+      {/* PARTNERS */}
+      <section id="partners" className="py-24 lg:py-32">
+        <div className="max-w-7xl mx-auto px-6 lg:px-10">
+          <div className="max-w-3xl">
+            <Kicker>{L.partnersKicker}</Kicker>
+            <h2 className="font-display text-3xl md:text-4xl text-[color:var(--emerald-deep)] mt-4">{L.partnersTitle}</h2>
+          </div>
+          <div className="mt-12 grid md:grid-cols-3 gap-5">
+            {L.partners.map((p, i) => (
+              <a
+                key={i}
+                href={p.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group rounded-2xl p-7 border border-border bg-card hover:border-[color:var(--gold)] hover:shadow-[var(--shadow-elegant)] transition-all flex flex-col"
+              >
+                <div className="w-14 h-14 rounded-xl flex items-center justify-center border border-[color:var(--emerald-deep)]/20 bg-[color:var(--sand)]">
+                  <PartnerGlyph index={i} />
+                </div>
+                <h3 className="font-display text-lg mt-5 text-[color:var(--emerald-deep)] leading-snug">{p.name}</h3>
+                <p className="text-xs uppercase tracking-widest text-muted-foreground mt-2">{p.role}</p>
+                <span className="mt-5 text-xs text-[color:var(--gold)] group-hover:underline" dir="ltr">
+                  {new URL(p.url).hostname.replace(/^www\./, "")} ↗
+                </span>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="relative py-24 lg:py-32 overflow-hidden">
         <img src={mosqueImg} alt="" loading="lazy" width={1024} height={1024} className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, oklch(0.18 0.04 160 / 0.92), oklch(0.22 0.06 160 / 0.88))" }} />
@@ -477,6 +590,38 @@ function Mark({ small }: { small?: boolean }) {
           <stop offset="100%" stopColor="oklch(0.32 0.07 160)" />
         </linearGradient>
       </defs>
+    </svg>
+  );
+}
+
+function PartnerGlyph({ index }: { index: number }) {
+  const stroke = "var(--emerald-deep)";
+  if (index === 0) {
+    // Awqaf — dome / mosque mark
+    return (
+      <svg width="28" height="28" viewBox="0 0 32 32" fill="none" aria-hidden>
+        <path d="M16 4 C 10 8 8 12 8 16 H 24 C 24 12 22 8 16 4 Z" stroke={stroke} strokeWidth="1.4" />
+        <rect x="6" y="16" width="20" height="12" stroke={stroke} strokeWidth="1.4" />
+        <line x1="16" y1="16" x2="16" y2="28" stroke={stroke} strokeWidth="1.2" />
+        <circle cx="16" cy="3" r="0.8" fill={stroke} />
+      </svg>
+    );
+  }
+  if (index === 1) {
+    // Tilawah — open Quran
+    return (
+      <svg width="28" height="28" viewBox="0 0 32 32" fill="none" aria-hidden>
+        <path d="M4 8 C 9 7 13 8 16 11 C 19 8 23 7 28 8 V 25 C 23 24 19 25 16 27 C 13 25 9 24 4 25 Z" stroke={stroke} strokeWidth="1.4" />
+        <line x1="16" y1="11" x2="16" y2="27" stroke={stroke} strokeWidth="1.2" />
+      </svg>
+    );
+  }
+  // Goodstack — stacked blocks
+  return (
+    <svg width="28" height="28" viewBox="0 0 32 32" fill="none" aria-hidden>
+      <rect x="6" y="20" width="20" height="6" rx="1.5" stroke={stroke} strokeWidth="1.4" />
+      <rect x="8" y="13" width="16" height="6" rx="1.5" stroke={stroke} strokeWidth="1.4" />
+      <rect x="10" y="6" width="12" height="6" rx="1.5" stroke={stroke} strokeWidth="1.4" />
     </svg>
   );
 }
