@@ -379,11 +379,11 @@ function Index() {
               </div>
               <div>
                 <dt className="text-[10px] uppercase tracking-widest text-muted-foreground mb-1">{L.trusteePhone}</dt>
-                <dd className="font-display text-base text-[color:var(--emerald-deep)]" dir="ltr">+966 5X XXX XXXX</dd>
+                <dd className="font-display text-base text-[color:var(--emerald-deep)]" dir="ltr">+966 50 560 9022</dd>
               </div>
               <div>
                 <dt className="text-[10px] uppercase tracking-widest text-muted-foreground mb-1">{L.trusteeEmail}</dt>
-                <dd className="font-display text-base text-[color:var(--emerald-deep)]" dir="ltr">trustee@alfurqan-waqf.org</dd>
+                <dd className="font-display text-base text-[color:var(--emerald-deep)]" dir="ltr">info@alforgan.org</dd>
               </div>
               <div>
                 <dt className="text-[10px] uppercase tracking-widest text-muted-foreground mb-1">{L.contact}</dt>
@@ -403,20 +403,20 @@ function Index() {
                 <div className="grid grid-cols-1 gap-3 text-sm">
                   <div className="flex justify-between gap-4 border-b border-white/10 pb-2">
                     <span className="text-[color:var(--sand)]/60">{L.bankName}</span>
-                    <span className="font-display text-[color:var(--sand)]" dir="ltr">Al Rajhi Bank</span>
+                    <span className="font-display text-[color:var(--sand)]" dir="ltr">مصرف الراجحي</span>
                   </div>
                   <div className="flex justify-between gap-4 border-b border-white/10 pb-2">
                     <span className="text-[color:var(--sand)]/60">{L.bankAccount}</span>
-                    <span className="font-display text-[color:var(--sand)] text-right">{isRtl ? "وقف الفرقان الخيري" : "Al-Furqan Charitable Endowment"}</span>
+                    <span className="font-display text-[color:var(--sand)] text-right">{isRtl ? "وقف الفرقان الخيري ودار نسائية لتحفيظ القرآن\u00a0" : "Al-Furqan Charitable Endowment"}</span>
                   </div>
                   <div className="flex justify-between gap-4">
                     <span className="text-[color:var(--sand)]/60">{L.bankIban}</span>
-                    <span className="font-display text-[color:var(--sand)] tabular-nums" dir="ltr">SA00 0000 0000 0000 0000 0000</span>
+                    <span className="font-display text-[color:var(--sand)] tabular-nums" dir="ltr">SA58 8000 0463 6080 1691 8344</span>
                   </div>
                 </div>
                 <p className="text-xs text-[color:var(--sand)]/60 leading-relaxed pt-2 border-t border-white/10">{L.bankNote}</p>
               </div>
-              <a href={`mailto:trustee@alfurqan-waqf.org`} className="inline-flex mt-6 px-7 py-3.5 rounded-md font-medium text-[color:var(--ink)] shadow-[var(--shadow-gold)]" style={{ background: "var(--gradient-gold)" }}>
+              <a href={`mailto:info@alforgan.org`} className="inline-flex mt-6 px-7 py-3.5 rounded-md font-medium text-[color:var(--ink)] shadow-[var(--shadow-gold)]" style={{ background: "var(--gradient-gold)" }}>
                 {isRtl ? "تواصل مع الناظر" : "Contact the trustee"}
               </a>
               <p className="mt-6 text-xs text-[color:var(--sand)]/60 leading-relaxed">
