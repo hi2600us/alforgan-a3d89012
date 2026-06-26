@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import buildingAsset from "@/assets/furqan-building.png.asset.json";
+import buildingSkeleton from "@/assets/furqan-building-skeleton.png.asset.json";
 import patternImg from "@/assets/pattern.jpg";
 import quranImg from "@/assets/quran-study.jpg";
 import mosqueImg from "@/assets/mosque-interior.jpg";
@@ -90,6 +91,23 @@ const t = {
     bankAccount: "اسم الحساب",
     bankIban: "رقم الآيبان",
     bankNote: "يُرجى التواصل مع ناظر الوقف لتأكيد التحويل واستلام الإيصال.",
+    timelineKicker: "الجدول الزمني",
+    timelineTitle: "المرحلة الحالية: الهيكل الإنشائي",
+    timelineBody: "اكتمل الهيكل الخرساني للمبنى. نخطط لإنجاز جميع أعمال التشطيب وتشغيل المشروع خلال سنة واحدة بإذن الله.",
+    timelineSteps: [
+      { t: "المرحلة الأولى", d: "الهيكل الإنشائي (مكتمل)", s: "done" },
+      { t: "المرحلة الثانية", d: "أعمال التشطيب الداخلي والخارجي", s: "now" },
+      { t: "المرحلة الثالثة", d: "التكييف والكهرباء والميكانيكا", s: "next" },
+      { t: "المرحلة الرابعة", d: "الأثاث والفرش والتسليم والتشغيل", s: "next" },
+    ],
+    timelineEta: "المدة المتوقعة للإنجاز: سنة واحدة",
+    partnersKicker: "شركاؤنا والجهات الداعمة",
+    partnersTitle: "بدعم وإشراف من",
+    partners: [
+      { name: "الهيئة العامة للأوقاف", role: "الجهة المُشرفة", url: "https://awqaf.gov.sa/ar" },
+      { name: "جمعية تلاوة لتحفيظ القرآن الكريم ببلقرن", role: "الجهة المستفيدة", url: "https://www.quran-balqarn.org.sa/" },
+      { name: "Goodstack", role: "منصة التبرعات الدولية", url: "https://goodstack.org" },
+    ],
   },
   en: {
     dir: "ltr" as const,
@@ -159,6 +177,23 @@ const t = {
     bankAccount: "Account name",
     bankIban: "IBAN",
     bankNote: "Please contact the trustee to confirm your transfer and receive a receipt.",
+    timelineKicker: "Project timeline",
+    timelineTitle: "Current phase: Structural skeleton",
+    timelineBody: "The concrete skeleton of the building is complete. We plan to finish all the works and bring the project into operation within one year, inshaAllah.",
+    timelineSteps: [
+      { t: "Phase 1", d: "Structural skeleton (completed)", s: "done" },
+      { t: "Phase 2", d: "Interior & exterior finishing works", s: "now" },
+      { t: "Phase 3", d: "HVAC, electrical & mechanical", s: "next" },
+      { t: "Phase 4", d: "Furniture, handover & operation", s: "next" },
+    ],
+    timelineEta: "Expected completion: one year",
+    partnersKicker: "Partners & supporting bodies",
+    partnersTitle: "Under the supervision and support of",
+    partners: [
+      { name: "General Authority of Awqaf", role: "Supervisory authority", url: "https://awqaf.gov.sa/ar" },
+      { name: "Tilawah Quran Memorization Society — Balqarn", role: "Beneficiary society", url: "https://www.quran-balqarn.org.sa/" },
+      { name: "Goodstack", role: "International donation platform", url: "https://goodstack.org" },
+    ],
   },
 };
 
