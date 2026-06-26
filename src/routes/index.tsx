@@ -444,8 +444,7 @@ function Index() {
                 height={792}
                 className="w-full h-auto block"
               />
-              <div className="absolute top-3 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[color:var(--emerald-deep)] text-[color:var(--sand)] text-[10px] tracking-[0.25em] uppercase"
-                style={{ [isRtl ? "right" : "left"]: "0.75rem" } as React.CSSProperties}>
+              <div className={`absolute top-3 ${isRtl ? "right-3" : "left-3"} inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[color:var(--emerald-deep)] text-[color:var(--sand)] text-[10px] tracking-[0.25em] uppercase`}>
                 {isRtl ? "صورة من الموقع · المرحلة الحالية" : "On site · current phase"}
               </div>
             </div>
