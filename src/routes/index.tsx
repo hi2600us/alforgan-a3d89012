@@ -370,32 +370,6 @@ function Index() {
         </div>
       </section>
 
-      {/* WORKS */}
-      <section id="works" className="py-24 lg:py-32">
-        <div className="max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-12 gap-14">
-          <div className="lg:col-span-5">
-            <Kicker>{L.worksKicker}</Kicker>
-            <h2 className="font-display text-4xl md:text-5xl text-[color:var(--emerald-deep)] mt-4 leading-tight">{L.worksTitle}</h2>
-            <a href="#donate" className="inline-flex mt-8 px-7 py-3.5 rounded-md font-medium text-[color:var(--ink)] shadow-[var(--shadow-gold)]" style={{ background: "var(--gradient-gold)" }}>
-              {L.donateCta}
-            </a>
-          </div>
-          <div className="lg:col-span-7">
-            <ul className="divide-y divide-border border-y border-border">
-              {L.worksList.map((w, i) => (
-                <li key={i} className="py-5 flex items-baseline gap-5">
-                  <span className="font-display text-[color:var(--gold)] text-sm tabular-nums w-8" dir="ltr">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <span className="text-base md:text-lg text-foreground/90">{w}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      {/* IMPACT */}
       {/* TIMELINE */}
       <section id="timeline" className="py-24 lg:py-32 bg-[color:var(--sand)]/40 border-y border-border">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
@@ -464,6 +438,30 @@ function Index() {
       </section>
 
       {/* PARTNERS */}
+      <section id="works" className="py-16 lg:py-20 bg-[color:var(--sand)]/30 border-y border-border">
+        <div className="max-w-6xl mx-auto px-6 lg:px-10">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
+            <div className="max-w-2xl">
+              <Kicker>{L.worksKicker}</Kicker>
+              <h2 className="font-display text-2xl md:text-3xl text-[color:var(--emerald-deep)] mt-3 leading-snug">{L.worksTitle}</h2>
+            </div>
+            <a href="#donate" className="self-start inline-flex px-5 py-2.5 rounded-md text-sm font-medium text-[color:var(--ink)] shadow-[var(--shadow-gold)] whitespace-nowrap" style={{ background: "var(--gradient-gold)" }}>
+              {L.donateCta}
+            </a>
+          </div>
+          <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-1">
+            {L.worksList.map((w, i) => (
+              <li key={i} className="flex items-baseline gap-3 py-2 border-b border-border/60">
+                <span className="font-display text-[color:var(--gold)] text-xs tabular-nums w-6 shrink-0" dir="ltr">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <span className="text-sm text-foreground/85 leading-snug">{w}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
       <section id="partners" className="py-24 lg:py-32">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div className="max-w-3xl">
