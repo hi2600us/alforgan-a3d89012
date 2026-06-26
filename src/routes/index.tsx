@@ -1,10 +1,38 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import buildingAsset from "@/assets/furqan-building.png.asset.json";
+import buildingClean from "@/assets/furqan-building-clean.png";
 import buildingSkeleton from "@/assets/furqan-building-skeleton.png.asset.json";
 import patternImg from "@/assets/pattern.jpg";
 import quranImg from "@/assets/quran-study.jpg";
 import mosqueImg from "@/assets/mosque-interior.jpg";
+import {
+  Building2,
+  Hammer,
+  PaintRoller,
+  LayoutGrid,
+  Zap,
+  PanelTop,
+  DoorOpen,
+  Shield,
+  Wind,
+  Trees,
+  Sofa,
+} from "lucide-react";
+
+const worksIcons = [
+  Building2,
+  Hammer,
+  PaintRoller,
+  LayoutGrid,
+  Zap,
+  PanelTop,
+  DoorOpen,
+  Shield,
+  Wind,
+  Trees,
+  Sofa,
+];
 
 export const Route = createFileRoute("/")({
   head: () => ({
