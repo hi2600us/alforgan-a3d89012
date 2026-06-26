@@ -281,17 +281,18 @@ function Index() {
 
             <div className="lg:col-span-6 relative">
               <div className="absolute -inset-6 rounded-2xl opacity-30 blur-3xl" style={{ background: "var(--gradient-gold)" }} />
-              <div className="relative rounded-2xl overflow-hidden shadow-[var(--shadow-elegant)] border border-white/10">
+              <div className="relative flex items-end justify-center min-h-[420px]">
                 <img
-                  src={buildingAsset.url}
-                  alt="Al-Furqan endowment building in Balqarn at sunset"
-                  className="w-full h-auto block"
-                  width={1080}
-                  height={817}
+                  src={buildingSkeleton.url}
+                  alt="Al-Furqan endowment building skeleton phase in Balqarn"
+                  className="w-full h-auto block drop-shadow-[0_25px_45px_rgba(0,0,0,0.45)]"
+                  width={1408}
+                  height={792}
                 />
-                <div className="absolute bottom-0 inset-x-0 p-5 bg-gradient-to-t from-black/80 to-transparent text-[color:var(--sand)]">
-                  <div className="text-[10px] tracking-[0.25em] uppercase text-[color:var(--gold-soft)]">{lang === "ar" ? "موقع المشروع" : "Project location"}</div>
-                  <div className="font-display text-lg mt-1">{lang === "ar" ? "مدينة عفراء · بلقرن · عسير" : "Afra · Balqarn · Asir"}</div>
+                <div className="absolute -bottom-2 inset-x-0 flex justify-center">
+                  <span className="px-4 py-1.5 rounded-full text-[10px] tracking-[0.25em] uppercase text-[color:var(--ink)] font-medium" style={{ background: "var(--gradient-gold)" }}>
+                    {lang === "ar" ? "المرحلة الحالية · الهيكل الإنشائي" : "Current phase · Skeleton"}
+                  </span>
                 </div>
               </div>
             </div>
