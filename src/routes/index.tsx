@@ -372,10 +372,24 @@ function Index() {
             <Kicker>{L.trusteeKicker}</Kicker>
             <h3 className="font-display text-3xl md:text-4xl text-[color:var(--emerald-deep)] mt-3">{L.trusteeTitle}</h3>
             <p className="mt-6 text-base text-foreground/80 leading-relaxed">{L.trusteeBody}</p>
-            <div className="mt-8 pt-8 border-t border-border text-sm text-muted-foreground">
-              <div className="text-[10px] uppercase tracking-widest mb-2">{L.contact}</div>
-              <div>{L.location}</div>
-            </div>
+            <dl className="mt-8 pt-8 border-t border-border grid sm:grid-cols-2 gap-4 text-sm">
+              <div>
+                <dt className="text-[10px] uppercase tracking-widest text-muted-foreground mb-1">{L.trusteeRole}</dt>
+                <dd className="font-display text-base text-[color:var(--emerald-deep)]">{isRtl ? "من ذرية الواقف" : "From the founder's descendants"}</dd>
+              </div>
+              <div>
+                <dt className="text-[10px] uppercase tracking-widest text-muted-foreground mb-1">{L.trusteePhone}</dt>
+                <dd className="font-display text-base text-[color:var(--emerald-deep)]" dir="ltr">+966 5X XXX XXXX</dd>
+              </div>
+              <div>
+                <dt className="text-[10px] uppercase tracking-widest text-muted-foreground mb-1">{L.trusteeEmail}</dt>
+                <dd className="font-display text-base text-[color:var(--emerald-deep)]" dir="ltr">trustee@alfurqan-waqf.org</dd>
+              </div>
+              <div>
+                <dt className="text-[10px] uppercase tracking-widest text-muted-foreground mb-1">{L.contact}</dt>
+                <dd className="text-foreground/80 text-xs leading-relaxed">{L.location}</dd>
+              </div>
+            </dl>
           </div>
 
           <div id="donate" className="rounded-2xl p-10 lg:p-12 relative overflow-hidden text-[color:var(--sand)]" style={{ background: "var(--gradient-hero)" }}>
@@ -384,8 +398,26 @@ function Index() {
               <Kicker accent light>{L.nav.donate}</Kicker>
               <h3 className="font-display text-3xl md:text-4xl mt-3">{L.donateTitle}</h3>
               <p className="mt-5 text-[color:var(--sand)]/80 leading-relaxed">{L.donateBody}</p>
-              <a href={`mailto:trustee@alfurqan-waqf.org`} className="inline-flex mt-8 px-7 py-3.5 rounded-md font-medium text-[color:var(--ink)] shadow-[var(--shadow-gold)]" style={{ background: "var(--gradient-gold)" }}>
-                {L.nav.donate}
+              <div className="mt-8 rounded-xl border border-[color:var(--gold-soft)]/30 bg-black/20 backdrop-blur-sm p-6 space-y-4">
+                <div className="text-[10px] tracking-[0.3em] uppercase text-[color:var(--gold-soft)]">{L.bankTitle}</div>
+                <div className="grid grid-cols-1 gap-3 text-sm">
+                  <div className="flex justify-between gap-4 border-b border-white/10 pb-2">
+                    <span className="text-[color:var(--sand)]/60">{L.bankName}</span>
+                    <span className="font-display text-[color:var(--sand)]" dir="ltr">Al Rajhi Bank</span>
+                  </div>
+                  <div className="flex justify-between gap-4 border-b border-white/10 pb-2">
+                    <span className="text-[color:var(--sand)]/60">{L.bankAccount}</span>
+                    <span className="font-display text-[color:var(--sand)] text-right">{isRtl ? "وقف الفرقان الخيري" : "Al-Furqan Charitable Endowment"}</span>
+                  </div>
+                  <div className="flex justify-between gap-4">
+                    <span className="text-[color:var(--sand)]/60">{L.bankIban}</span>
+                    <span className="font-display text-[color:var(--sand)] tabular-nums" dir="ltr">SA00 0000 0000 0000 0000 0000</span>
+                  </div>
+                </div>
+                <p className="text-xs text-[color:var(--sand)]/60 leading-relaxed pt-2 border-t border-white/10">{L.bankNote}</p>
+              </div>
+              <a href={`mailto:trustee@alfurqan-waqf.org`} className="inline-flex mt-6 px-7 py-3.5 rounded-md font-medium text-[color:var(--ink)] shadow-[var(--shadow-gold)]" style={{ background: "var(--gradient-gold)" }}>
+                {isRtl ? "تواصل مع الناظر" : "Contact the trustee"}
               </a>
               <p className="mt-6 text-xs text-[color:var(--sand)]/60 leading-relaxed">
                 {lang === "ar"
