@@ -132,7 +132,7 @@ const t = {
     permitPending: "Pending issuance",
     locationKicker: "Location",
     locationTitle: "Project location on the map",
-    locationAddress: "\u00a0ALUA6793, Sabt Al Alayah 67523",
+    locationAddress: "JXWX+9V Sabt Al Alayah",
     aboutKicker: "About the waqf",
     aboutTitle: "The endowment of Sheikh Abdullah bin Saad bin Hanash Al-Qarni",
     aboutBody: "An endowment covered by Deed No. (361188322) issued by the General Court of Balqarn on 20/06/1436 AH, and the trusteeship deed issued by the Personal Status Court in Abha No. (47312974 51) on 26/02/1447 AH. It is established on a building owned per the Real Estate Exchange deed No. (4606720030 23) dated 30/07/1447 AH, located in Balqarn, on the condition that the trustee be from the descendants of the founder.",
