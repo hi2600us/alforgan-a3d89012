@@ -438,6 +438,30 @@ function Index() {
       </section>
 
       {/* PARTNERS */}
+      <section id="works" className="py-16 lg:py-20 bg-[color:var(--sand)]/30 border-y border-border">
+        <div className="max-w-6xl mx-auto px-6 lg:px-10">
+          <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
+            <div className="max-w-2xl">
+              <Kicker>{L.worksKicker}</Kicker>
+              <h2 className="font-display text-2xl md:text-3xl text-[color:var(--emerald-deep)] mt-3 leading-snug">{L.worksTitle}</h2>
+            </div>
+            <a href="#donate" className="self-start inline-flex px-5 py-2.5 rounded-md text-sm font-medium text-[color:var(--ink)] shadow-[var(--shadow-gold)] whitespace-nowrap" style={{ background: "var(--gradient-gold)" }}>
+              {L.donateCta}
+            </a>
+          </div>
+          <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-1">
+            {L.worksList.map((w, i) => (
+              <li key={i} className="flex items-baseline gap-3 py-2 border-b border-border/60">
+                <span className="font-display text-[color:var(--gold)] text-xs tabular-nums w-6 shrink-0" dir="ltr">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <span className="text-sm text-foreground/85 leading-snug">{w}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
       <section id="partners" className="py-24 lg:py-32">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div className="max-w-3xl">
