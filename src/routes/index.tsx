@@ -218,6 +218,8 @@ function Index() {
             <a href="#about" className="hover:text-[color:var(--emerald-deep)] transition">{L.nav.about}</a>
             <a href="#project" className="hover:text-[color:var(--emerald-deep)] transition">{L.nav.project}</a>
             <a href="#works" className="hover:text-[color:var(--emerald-deep)] transition">{L.nav.works}</a>
+            <a href="#timeline" className="hover:text-[color:var(--emerald-deep)] transition">{isRtl ? "الجدول الزمني" : "Timeline"}</a>
+            <a href="#partners" className="hover:text-[color:var(--emerald-deep)] transition">{isRtl ? "الشركاء" : "Partners"}</a>
             <a href="#trustee" className="hover:text-[color:var(--emerald-deep)] transition">{L.nav.trustee}</a>
           </div>
           <div className="flex items-center gap-3">
