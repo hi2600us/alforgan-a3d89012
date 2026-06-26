@@ -323,11 +323,11 @@ function Index() {
               <div className="absolute -inset-6 rounded-2xl opacity-30 blur-3xl" style={{ background: "var(--gradient-gold)" }} />
               <div className="relative flex items-end justify-center min-h-[420px]">
                 <img
-                  src={buildingAsset.url}
+                  src={buildingClean}
                   alt="Al-Furqan endowment building rendering in Balqarn"
-                  className="w-full h-auto block drop-shadow-[0_25px_45px_rgba(0,0,0,0.45)]"
-                  width={1408}
-                  height={792}
+                  className="w-full h-auto block drop-shadow-[0_25px_45px_rgba(0,0,0,0.55)]"
+                  width={662}
+                  height={610}
                 />
                 <div className="absolute -bottom-2 inset-x-0 flex justify-center">
                   <span className="px-4 py-1.5 rounded-full text-[10px] tracking-[0.25em] uppercase text-[color:var(--ink)] font-medium" style={{ background: "var(--gradient-gold)" }}>
