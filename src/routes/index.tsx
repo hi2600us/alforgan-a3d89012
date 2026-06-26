@@ -37,6 +37,11 @@ const t = {
     deedNo: "رقم الصك",
     deedDate: "تاريخ الصك",
     naziraNo: "صك النظارة",
+    permitNo: "رقم تصريح جمع التبرعات",
+    permitPending: "قيد الاستخراج",
+    locationKicker: "الموقع",
+    locationTitle: "موقع المشروع على الخريطة",
+    locationAddress: "4315 2 الربوة، ALUA6793، 6793، سبت العلاية 67523",
     aboutKicker: "عن الوقف",
     aboutTitle: "وقف الفرقان الخيري ودار نسائية لتحفيظ القرآن",
     aboutBody: "وقف للشيخ عبدالله بن سعد بن حنش القرني رحمه الله على مبنى مملوك للواقف حسب الصك الصادر من البورصة العقارية والواقع في عفراء محافظة بلقرن.",
@@ -123,6 +128,11 @@ const t = {
     deedNo: "Deed No.",
     deedDate: "Deed Date",
     naziraNo: "Trusteeship Deed",
+    permitNo: "Fundraising Permit No.",
+    permitPending: "Pending issuance",
+    locationKicker: "Location",
+    locationTitle: "Project location on the map",
+    locationAddress: "4315 2 Al Rabwah, ALUA6793, 6793, Sabt Al Alayah 67523",
     aboutKicker: "About the waqf",
     aboutTitle: "The endowment of Sheikh Abdullah bin Saad bin Hanash Al-Qarni",
     aboutBody: "An endowment covered by Deed No. (361188322) issued by the General Court of Balqarn on 20/06/1436 AH, and the trusteeship deed issued by the Personal Status Court in Abha No. (47312974 51) on 26/02/1447 AH. It is established on a building owned per the Real Estate Exchange deed No. (4606720030 23) dated 30/07/1447 AH, located in Balqarn, on the condition that the trustee be from the descendants of the founder.",
@@ -285,15 +295,15 @@ function Index() {
               <div className="absolute -inset-6 rounded-2xl opacity-30 blur-3xl" style={{ background: "var(--gradient-gold)" }} />
               <div className="relative flex items-end justify-center min-h-[420px]">
                 <img
-                  src={buildingSkeleton.url}
-                  alt="Al-Furqan endowment building skeleton phase in Balqarn"
+                  src={buildingAsset.url}
+                  alt="Al-Furqan endowment building rendering in Balqarn"
                   className="w-full h-auto block drop-shadow-[0_25px_45px_rgba(0,0,0,0.45)]"
                   width={1408}
                   height={792}
                 />
                 <div className="absolute -bottom-2 inset-x-0 flex justify-center">
                   <span className="px-4 py-1.5 rounded-full text-[10px] tracking-[0.25em] uppercase text-[color:var(--ink)] font-medium" style={{ background: "var(--gradient-gold)" }}>
-                    {lang === "ar" ? "المرحلة الحالية · الهيكل الإنشائي" : "Current phase · Skeleton"}
+                    {lang === "ar" ? "التصور النهائي للمشروع" : "Final project rendering"}
                   </span>
                 </div>
               </div>
@@ -330,6 +340,7 @@ function Index() {
               <DetailRow label={L.deedNo} value="361188322" />
               <DetailRow label={L.deedDate} value="20 / 06 / 1436 AH" />
               <DetailRow label={L.naziraNo} value="47312974 51 · 26/02/1447 AH" />
+              <DetailRow label={L.permitNo} value={L.permitPending} />
             </dl>
           </div>
         </div>
@@ -423,9 +434,31 @@ function Index() {
               );
             })}
           </ol>
-          <div className="mt-10 inline-flex items-center gap-3 px-5 py-3 rounded-full border border-[color:var(--gold)]/40 bg-card">
-            <span className="w-2 h-2 rounded-full bg-[color:var(--gold)] animate-pulse" />
-            <span className="text-sm text-[color:var(--emerald-deep)] font-display">{L.timelineEta}</span>
+          <div className="mt-12 grid lg:grid-cols-2 gap-8 items-center">
+            <div className="relative rounded-2xl overflow-hidden border border-[color:var(--gold)]/30 bg-card">
+              <img
+                src={buildingSkeleton.url}
+                alt={isRtl ? "صورة الموقع: المرحلة الإنشائية الحالية" : "On-site photo: current structural phase"}
+                loading="lazy"
+                width={1408}
+                height={792}
+                className="w-full h-auto block"
+              />
+              <div className={`absolute top-3 ${isRtl ? "right-3" : "left-3"} inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[color:var(--emerald-deep)] text-[color:var(--sand)] text-[10px] tracking-[0.25em] uppercase`}>
+                {isRtl ? "صورة من الموقع · المرحلة الحالية" : "On site · current phase"}
+              </div>
+            </div>
+            <div>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                {isRtl
+                  ? "الصورة أعلاه من الموقع توضّح اكتمال الهيكل الإنشائي للمبنى، وهو الأساس الذي ستبنى عليه أعمال التشطيب القادمة."
+                  : "The on-site photo above shows the completed concrete skeleton — the foundation on which all upcoming finishing works will be built."}
+              </p>
+              <div className="mt-6 inline-flex items-center gap-3 px-5 py-3 rounded-full border border-[color:var(--gold)]/40 bg-card">
+                <span className="w-2 h-2 rounded-full bg-[color:var(--gold)] animate-pulse" />
+                <span className="text-sm text-[color:var(--emerald-deep)] font-display">{L.timelineEta}</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -456,6 +489,38 @@ function Index() {
                 </span>
               </a>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* LOCATION */}
+      <section id="location" className="py-24 lg:py-32 bg-[color:var(--sand)]/40 border-y border-border">
+        <div className="max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-12 gap-10 items-start">
+          <div className="lg:col-span-5">
+            <Kicker>{L.locationKicker}</Kicker>
+            <h2 className="font-display text-4xl md:text-5xl text-[color:var(--emerald-deep)] mt-4 leading-tight">{L.locationTitle}</h2>
+            <p className="mt-5 text-base text-foreground/80 leading-relaxed">{L.locationAddress}</p>
+            <a
+              href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent("4315 Al Rabwah, Sabt Al Alayah 67523, Saudi Arabia")}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex mt-8 px-6 py-3 rounded-md font-medium text-[color:var(--ink)] shadow-[var(--shadow-gold)]"
+              style={{ background: "var(--gradient-gold)" }}
+            >
+              {isRtl ? "افتح في خرائط جوجل" : "Open in Google Maps"}
+            </a>
+          </div>
+          <div className="lg:col-span-7 rounded-2xl overflow-hidden border border-border shadow-[var(--shadow-elegant)]">
+            <iframe
+              title="Al-Furqan Waqf location"
+              src={`https://www.google.com/maps?q=${encodeURIComponent("4315 Al Rabwah, Sabt Al Alayah 67523, Saudi Arabia")}&output=embed`}
+              width="100%"
+              height="420"
+              style={{ border: 0 }}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              allowFullScreen
+            />
           </div>
         </div>
       </section>
@@ -550,7 +615,10 @@ function Index() {
             <span className="font-display text-base text-[color:var(--emerald-deep)]">{L.heroTitle}</span>
           </div>
           <div className="text-xs">{L.footerRights}</div>
-          <div className="text-xs" dir="ltr">{L.certNo}: 1112506318</div>
+          <div className="text-xs flex flex-col md:items-end gap-1">
+            <span dir="ltr">{L.certNo}: 1112506318</span>
+            <span>{L.permitNo}: {L.permitPending}</span>
+          </div>
         </div>
       </footer>
     </div>
