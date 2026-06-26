@@ -513,7 +513,7 @@ function Index() {
           <div className="lg:col-span-7 rounded-2xl overflow-hidden border border-border shadow-[var(--shadow-elegant)]">
             <iframe
               title="Al-Furqan Waqf location"
-              src={`https://www.google.com/maps?q=${encodeURIComponent("4315 Al Rabwah, Sabt Al Alayah 67523, Saudi Arabia")}&output=embed`}
+              src={`https://www.google.com/maps?q=${encodeURIComponent("JXWX+9V Sabt Al Alayah")}&output=embed`}
               width="100%"
               height="420"
               style={{ border: 0 }}
