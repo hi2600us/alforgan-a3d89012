@@ -41,7 +41,7 @@ const t = {
     permitPending: "قيد الاستخراج",
     locationKicker: "الموقع",
     locationTitle: "موقع المشروع على الخريطة",
-    locationAddress: "\u00a0ALUA6793، سبت العلاية 67523",
+    locationAddress: "JXWX+9V Sabt Al Alayah",
     aboutKicker: "عن الوقف",
     aboutTitle: "وقف الفرقان الخيري ودار نسائية لتحفيظ القرآن",
     aboutBody: "وقف للشيخ عبدالله بن سعد بن حنش القرني رحمه الله على مبنى مملوك للواقف حسب الصك الصادر من البورصة العقارية والواقع في عفراء محافظة بلقرن.",
