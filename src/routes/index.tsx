@@ -501,7 +501,7 @@ function Index() {
             <h2 className="font-display text-4xl md:text-5xl text-[color:var(--emerald-deep)] mt-4 leading-tight">{L.locationTitle}</h2>
             <p className="mt-5 text-base text-foreground/80 leading-relaxed">{L.locationAddress}</p>
             <a
-              href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent("4315 Al Rabwah, Sabt Al Alayah 67523, Saudi Arabia")}`}
+              href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent("JXWX+9V Sabt Al Alayah")}`}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex mt-8 px-6 py-3 rounded-md font-medium text-[color:var(--ink)] shadow-[var(--shadow-gold)]"
