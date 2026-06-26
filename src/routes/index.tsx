@@ -591,3 +591,35 @@ function Mark({ small }: { small?: boolean }) {
     </svg>
   );
 }
+
+function PartnerGlyph({ index }: { index: number }) {
+  const stroke = "var(--emerald-deep)";
+  if (index === 0) {
+    // Awqaf — dome / mosque mark
+    return (
+      <svg width="28" height="28" viewBox="0 0 32 32" fill="none" aria-hidden>
+        <path d="M16 4 C 10 8 8 12 8 16 H 24 C 24 12 22 8 16 4 Z" stroke={stroke} strokeWidth="1.4" />
+        <rect x="6" y="16" width="20" height="12" stroke={stroke} strokeWidth="1.4" />
+        <line x1="16" y1="16" x2="16" y2="28" stroke={stroke} strokeWidth="1.2" />
+        <circle cx="16" cy="3" r="0.8" fill={stroke} />
+      </svg>
+    );
+  }
+  if (index === 1) {
+    // Tilawah — open Quran
+    return (
+      <svg width="28" height="28" viewBox="0 0 32 32" fill="none" aria-hidden>
+        <path d="M4 8 C 9 7 13 8 16 11 C 19 8 23 7 28 8 V 25 C 23 24 19 25 16 27 C 13 25 9 24 4 25 Z" stroke={stroke} strokeWidth="1.4" />
+        <line x1="16" y1="11" x2="16" y2="27" stroke={stroke} strokeWidth="1.2" />
+      </svg>
+    );
+  }
+  // Goodstack — stacked blocks
+  return (
+    <svg width="28" height="28" viewBox="0 0 32 32" fill="none" aria-hidden>
+      <rect x="6" y="20" width="20" height="6" rx="1.5" stroke={stroke} strokeWidth="1.4" />
+      <rect x="8" y="13" width="16" height="6" rx="1.5" stroke={stroke} strokeWidth="1.4" />
+      <rect x="10" y="6" width="12" height="6" rx="1.5" stroke={stroke} strokeWidth="1.4" />
+    </svg>
+  );
+}
