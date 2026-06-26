@@ -383,6 +383,81 @@ function Index() {
       </section>
 
       {/* IMPACT */}
+      {/* TIMELINE */}
+      <section id="timeline" className="py-24 lg:py-32 bg-[color:var(--sand)]/40 border-y border-border">
+        <div className="max-w-7xl mx-auto px-6 lg:px-10">
+          <div className="max-w-3xl">
+            <Kicker>{L.timelineKicker}</Kicker>
+            <h2 className="font-display text-4xl md:text-5xl text-[color:var(--emerald-deep)] mt-4 leading-tight">{L.timelineTitle}</h2>
+            <p className="mt-5 text-lg text-foreground/80 leading-relaxed">{L.timelineBody}</p>
+          </div>
+          <ol className="mt-14 grid md:grid-cols-2 lg:grid-cols-4 gap-5 relative">
+            {L.timelineSteps.map((step, i) => {
+              const isDone = step.s === "done";
+              const isNow = step.s === "now";
+              return (
+                <li key={i} className={`relative rounded-2xl p-7 border bg-card transition ${isNow ? "border-[color:var(--gold)] shadow-[var(--shadow-elegant)]" : "border-border"}`}>
+                  <div className="flex items-center gap-3">
+                    <span
+                      className={`w-9 h-9 rounded-full flex items-center justify-center text-xs font-display ${
+                        isDone
+                          ? "bg-[color:var(--emerald-deep)] text-[color:var(--sand)]"
+                          : isNow
+                          ? "text-[color:var(--ink)]"
+                          : "bg-muted text-muted-foreground"
+                      }`}
+                      style={isNow ? { background: "var(--gradient-gold)" } : undefined}
+                      dir="ltr"
+                    >
+                      {isDone ? "✓" : String(i + 1).padStart(2, "0")}
+                    </span>
+                    <span className="text-[10px] tracking-[0.25em] uppercase text-muted-foreground">
+                      {isDone ? (isRtl ? "مكتمل" : "Done") : isNow ? (isRtl ? "قيد التنفيذ" : "In progress") : (isRtl ? "قادم" : "Upcoming")}
+                    </span>
+                  </div>
+                  <h3 className="font-display text-xl mt-5 text-[color:var(--emerald-deep)]">{step.t}</h3>
+                  <p className="text-sm text-muted-foreground mt-2 leading-relaxed">{step.d}</p>
+                </li>
+              );
+            })}
+          </ol>
+          <div className="mt-10 inline-flex items-center gap-3 px-5 py-3 rounded-full border border-[color:var(--gold)]/40 bg-card">
+            <span className="w-2 h-2 rounded-full bg-[color:var(--gold)] animate-pulse" />
+            <span className="text-sm text-[color:var(--emerald-deep)] font-display">{L.timelineEta}</span>
+          </div>
+        </div>
+      </section>
+
+      {/* PARTNERS */}
+      <section id="partners" className="py-24 lg:py-32">
+        <div className="max-w-7xl mx-auto px-6 lg:px-10">
+          <div className="max-w-3xl">
+            <Kicker>{L.partnersKicker}</Kicker>
+            <h2 className="font-display text-3xl md:text-4xl text-[color:var(--emerald-deep)] mt-4">{L.partnersTitle}</h2>
+          </div>
+          <div className="mt-12 grid md:grid-cols-3 gap-5">
+            {L.partners.map((p, i) => (
+              <a
+                key={i}
+                href={p.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group rounded-2xl p-7 border border-border bg-card hover:border-[color:var(--gold)] hover:shadow-[var(--shadow-elegant)] transition-all flex flex-col"
+              >
+                <div className="w-14 h-14 rounded-xl flex items-center justify-center border border-[color:var(--emerald-deep)]/20 bg-[color:var(--sand)]">
+                  <PartnerGlyph index={i} />
+                </div>
+                <h3 className="font-display text-lg mt-5 text-[color:var(--emerald-deep)] leading-snug">{p.name}</h3>
+                <p className="text-xs uppercase tracking-widest text-muted-foreground mt-2">{p.role}</p>
+                <span className="mt-5 text-xs text-[color:var(--gold)] group-hover:underline" dir="ltr">
+                  {new URL(p.url).hostname.replace(/^www\./, "")} ↗
+                </span>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="relative py-24 lg:py-32 overflow-hidden">
         <img src={mosqueImg} alt="" loading="lazy" width={1024} height={1024} className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, oklch(0.18 0.04 160 / 0.92), oklch(0.22 0.06 160 / 0.88))" }} />
