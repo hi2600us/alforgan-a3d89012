@@ -14,21 +14,54 @@ import { reportLovableError } from "../lib/lovable-error-reporting";
 
 function NotFoundComponent() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background px-4">
-      <div className="max-w-md text-center">
-        <h1 className="text-7xl font-bold text-foreground">404</h1>
-        <h2 className="mt-4 text-xl font-semibold text-foreground">Page not found</h2>
+    <div className="relative flex min-h-screen items-center justify-center overflow-hidden bg-background px-4 py-16">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 opacity-[0.07]"
+        style={{
+          backgroundImage:
+            "radial-gradient(circle at 20% 20%, hsl(var(--primary)) 0, transparent 40%), radial-gradient(circle at 80% 80%, hsl(var(--accent, var(--primary))) 0, transparent 45%)",
+        }}
+      />
+      <div className="relative z-10 mx-auto max-w-xl text-center">
+        <p
+          dir="rtl"
+          lang="ar"
+          className="font-[Amiri,serif] text-2xl text-primary"
+        >
+          ﴿ وَمَن يَتَوَكَّلْ عَلَى اللَّهِ فَهُوَ حَسْبُهُ ﴾
+        </p>
+        <h1 className="mt-8 font-[Cormorant_Garamond,serif] text-8xl font-semibold tracking-tight text-foreground">
+          404
+        </h1>
+        <div className="mx-auto mt-4 h-px w-24 bg-gradient-to-r from-transparent via-primary/60 to-transparent" />
+        <h2
+          dir="rtl"
+          lang="ar"
+          className="mt-6 font-[Amiri,serif] text-2xl text-foreground"
+        >
+          الصفحة غير موجودة
+        </h2>
+        <h2 className="mt-1 text-lg font-medium text-foreground/80">
+          Page not found
+        </h2>
+        <p dir="rtl" lang="ar" className="mt-6 font-[Amiri,serif] text-base text-muted-foreground">
+          عذرًا، الصفحة التي تبحث عنها غير متوفرة أو تم نقلها.
+        </p>
         <p className="mt-2 text-sm text-muted-foreground">
           The page you're looking for doesn't exist or has been moved.
         </p>
-        <div className="mt-6">
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
           <Link
             to="/"
-            className="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
+            className="inline-flex items-center justify-center rounded-md bg-primary px-6 py-2.5 text-sm font-medium text-primary-foreground shadow-sm transition-colors hover:bg-primary/90"
           >
-            Go home
+            العودة للرئيسية · Return Home
           </Link>
         </div>
+        <p className="mt-10 text-xs uppercase tracking-[0.25em] text-muted-foreground/70">
+          وقف الفرقان · Al-Furqan Endowment
+        </p>
       </div>
     </div>
   );
