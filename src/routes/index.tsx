@@ -53,13 +53,13 @@ type Lang = "ar" | "en";
 const t = {
   ar: {
     dir: "rtl" as const,
-    nav: { about: "عن الوقف", project: "المشروع", works: "أعمال التشطيب", trustee: "الناظر", donate: "تبرع الآن" },
+    nav: { about: "عن الوقف", project: "المشروع", works: "أعمال التشطيب", trustee: "النظارة", donate: "شارك في الوقف" },
     bismillah: "بِسْمِ ٱللَّهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ",
     eyebrow: "وقف خيري معتمد · هيئة الأوقاف بالمملكة العربية السعودية",
     heroTitle: "وقف الفرقان الخيري ودار نسائية لتحفيظ القرآن",
-    heroSub: "صدقةٌ جاريةٌ لتحفيظ كتاب الله، وعمارةٌ لبيوته في بلقرن.",
-    heroBody: "وقفٌ أهليٌّ خيريّ يهدف إلى استثمار العمارة الموقوفة في مدينة عفراء بمحافظة بلقرن لصالح جمعية تحفيظ القرآن الكريم، والإنفاق على حاجات جامع الفرقان الواقع شرق المبنى.",
-    donateCta: "ساهم في إكمال المشروع",
+    heroSub: "شراكةٌ وقفيّةٌ دائمة لخدمة كتاب الله وعمارة بيوته في بلقرن.",
+    heroBody: "وقفٌ أهليٌّ خيريّ يستثمر العمارة الموقوفة في مدينة عفراء بمحافظة بلقرن لصالح جمعية تحفيظ القرآن الكريم، والإنفاق على حاجات جامع الفرقان. الوقف اليوم في مرحلته الأخيرة قبل التشغيل، وحين يكتمل سيصبح ذاتيَّ الاستدامة ولن يحتاج إلى أي تبرعات لاحقة؛ مساهمتك الآن بذرةٌ واحدةٌ لأثرٍ دائم.",
+    donateCta: "ساهم في الأثر",
     learn: "تعرف على الوقف",
     certNo: "رقم الشهادة الوقفية",
     deedNo: "رقم الصك",
@@ -67,6 +67,9 @@ const t = {
     naziraNo: "صك النظارة",
     permitNo: "رقم تصريح جمع التبرعات",
     permitPending: "قيد الاستخراج",
+    sustainKicker: "وقفٌ ذاتيُّ الاستدامة",
+    sustainTitle: "مساهمةٌ واحدة · أثرٌ دائم",
+    sustainBody: "الوقف الآن في مرحلته الأخيرة قبل الاكتمال. بعد التشغيل ستُموِّل إيراداتُ المبنى تحفيظ القرآن وعمارة المسجد ذاتيًّا، دون الحاجة لأي تبرعاتٍ مستقبلية. شراكتك اليوم بذرةٌ تُثمر صدقةً جاريةً جيلًا بعد جيل.",
     locationKicker: "الموقع",
     locationTitle: "موقع المشروع على الخريطة",
     locationAddress: "JXWX+9V Sabt Al Alayah",
@@ -85,7 +88,7 @@ const t = {
       { t: "جامع الفرقان", d: "الإنفاق على حاجات الجامع الواقع شرق المبنى وصيانته." },
     ],
     worksKicker: "احتياجات التشطيب",
-    worksTitle: "أعمال نحتاج دعمكم لإنجازها",
+    worksTitle: "أعمالٌ تكتمل بشراكتكم",
     worksList: [
       "استكمال أعمال المباني (الواجهات والتعديلات الداخلية)",
       "التعديلات المعمارية وأعمال التكسير والترميم",
@@ -101,7 +104,7 @@ const t = {
     ],
     impactKicker: "أثر صدقتك",
     impactTitle: "صدقةٌ جاريةٌ لا ينقطع أجرها",
-    impactBody: "كل ريال يُصرف على إكمال هذا الصرح يتحول إلى عائدٍ مستمرٍّ ينفق على حفظ كتاب الله وعمارة بيوته. أجرٌ مضاعفٌ بإذن الله.",
+    impactBody: "كل ريالٍ يُسهم في إكمال هذا الصرح يتحوّل إلى عائدٍ وقفيٍّ مستدام يُنفق على حفظ كتاب الله وعمارة بيوته بإذن الله — مساهمةٌ واحدةٌ، وأجرٌ يجري إلى ما شاء الله.",
     impactStats: [
       { v: "11", l: "بنداً من أعمال التشطيبات" },
       { v: "1", l: "وقفٌ ينفع جيلاً بعد جيل" },
@@ -109,24 +112,24 @@ const t = {
     ],
     trusteeKicker: "الناظر على الوقف",
     trusteeTitle: "مجلس نظارة من ذرية الواقف",
-    trusteeBody: "وفق شرط الواقف، تكون النظارة من ذريته. الناظر مسؤولٌ أمام الله ثم أمام الهيئة العامة للأوقاف عن حُسن إدارة الوقف وتحقيق مصرفه.",
+    trusteeBody: "وفق شرط الواقف، تكون النظارة من ذريته. مجلس النظارة مسؤولٌ أمام الله ثم أمام الهيئة العامة للأوقاف عن حُسن إدارة الوقف واستدامة مصرفه.",
     contact: "تواصل",
     location: "مدينة عفراء، محافظة بلقرن، منطقة عسير، المملكة العربية السعودية",
     footerRights: "© وقف الفرقان · جميع الحقوق محفوظة",
-    donateTitle: "تبرع لإكمال مشروع وقف الفرقان",
-    donateBody: "لتفاصيل التحويل والشراكة في إكمال أعمال التشطيب، يُرجى التواصل مع ناظر الوقف.",
+    donateTitle: "شارك في إكمال وقف الفرقان",
+    donateBody: "مساهمتك اليوم بذرةٌ لمرّةٍ واحدة في وقفٍ سيصبح ذاتيَّ الاستدامة بعد تشغيله. لتفاصيل التحويل أو الشراكة في إكمال أعمال التشطيب، يُرجى التواصل مع مجلس النظارة.",
     trusteeName: "الناظر",
     trusteeRole: "ناظر الوقف",
     trusteePhone: "هاتف الناظر",
     trusteeEmail: "البريد الإلكتروني",
-    bankTitle: "قنوات التبرع",
+    bankTitle: "قنوات المساهمة",
     bankName: "اسم البنك",
     bankAccount: "اسم الحساب",
     bankIban: "رقم الآيبان",
-    bankNote: "يُرجى التواصل مع ناظر الوقف لتأكيد التحويل واستلام الإيصال.",
+    bankNote: "يُرجى التواصل مع مجلس النظارة لتأكيد التحويل واستلام الإيصال.",
     timelineKicker: "الجدول الزمني",
     timelineTitle: "المرحلة الحالية: الهيكل الإنشائي",
-    timelineBody: "اكتمل الهيكل الخرساني للمبنى. نخطط لإنجاز جميع أعمال التشطيب وتشغيل المشروع خلال سنة واحدة بإذن الله.",
+    timelineBody: "اكتمل الهيكل الخرساني للمبنى. خلال سنةٍ واحدةٍ بإذن الله تكتمل أعمال التشطيب ويبدأ التشغيل، فيصبح الوقف مكتفيًا ذاتيًّا بإيراداته.",
     timelineSteps: [
       { t: "المرحلة الأولى", d: "الهيكل الإنشائي (مكتمل)", s: "done" },
       { t: "المرحلة الثانية", d: "أعمال التشطيب الداخلي والخارجي", s: "now" },
@@ -144,13 +147,13 @@ const t = {
   },
   en: {
     dir: "ltr" as const,
-    nav: { about: "About", project: "Project", works: "Works", trustee: "Trustee", donate: "Donate" },
+    nav: { about: "About", project: "Project", works: "Works", trustee: "Trustee", donate: "Contribute" },
     bismillah: "In the name of Allah, the Most Gracious, the Most Merciful",
     eyebrow: "Certified Charitable Endowment · General Authority of Awqaf, KSA",
     heroTitle: "Al-Furqan Endowment",
-    heroSub: "A perpetual charity for memorizing the Holy Quran and serving the mosques of Balqarn.",
-    heroBody: "A family waqf established to invest the endowed building in Afra, Balqarn, for the benefit of the Balqarn Quran Memorization Society and the upkeep of Al-Furqan Mosque located east of the building.",
-    donateCta: "Help us complete the project",
+    heroSub: "A lasting endowment partnership for the Quran and the mosques of Balqarn.",
+    heroBody: "A family waqf investing the endowed building in Afra, Balqarn, for the benefit of the Balqarn Quran Memorization Society and the upkeep of Al-Furqan Mosque. The endowment is now in its final phase before completion. Once operational, it will become fully self-sustaining and will not require any future contributions — your contribution today is a one-time seed for a permanent, self-funding impact.",
+    donateCta: "Join the impact",
     learn: "Learn about the waqf",
     certNo: "Waqf Certificate No.",
     deedNo: "Deed No.",
@@ -158,6 +161,9 @@ const t = {
     naziraNo: "Trusteeship Deed",
     permitNo: "Fundraising Permit No.",
     permitPending: "Pending issuance",
+    sustainKicker: "A self-sustaining endowment",
+    sustainTitle: "One contribution · lasting legacy",
+    sustainBody: "The endowment is in its final development phase. Once completed, the building's income will perpetually fund Quran memorization and mosque care on its own — no further donations needed. Your partnership today plants a seed that gives, generation after generation.",
     locationKicker: "Location",
     locationTitle: "Project location on the map",
     locationAddress: "JXWX+9V Sabt Al Alayah",
@@ -176,7 +182,7 @@ const t = {
       { t: "Al-Furqan Mosque", d: "Funding the needs and maintenance of the mosque located east of the building." },
     ],
     worksKicker: "Finishing needs",
-    worksTitle: "Works we need your support to complete",
+    worksTitle: "Works completed through your partnership",
     worksList: [
       "Completion of building works (facades and interior adjustments)",
       "Architectural modifications, demolition and renovation",
@@ -192,7 +198,7 @@ const t = {
     ],
     impactKicker: "Your impact",
     impactTitle: "A continuing charity, ever-flowing",
-    impactBody: "Every riyal spent to complete this building converts into a continuous return that funds the memorization of the Quran and the care of Allah's houses. A reward multiplied, by His will.",
+    impactBody: "Every riyal contributed to complete this building becomes a perpetual, self-sustaining return that funds the memorization of the Quran and the care of Allah's houses — one contribution, an ongoing reward, by His will.",
     impactStats: [
       { v: "11", l: "finishing work items" },
       { v: "1", l: "endowment serving generations" },
@@ -200,24 +206,24 @@ const t = {
     ],
     trusteeKicker: "Trustee",
     trusteeTitle: "From the founder's descendants",
-    trusteeBody: "Per the founder's condition, trusteeship is held by a descendant. The trustee is accountable before Allah, then before the General Authority of Awqaf, for the sound management of the waqf and the fulfillment of its purpose.",
+    trusteeBody: "Per the founder's condition, trusteeship is held by a descendant. The trustee board is accountable before Allah, then before the General Authority of Awqaf, for the sound management of the waqf and the sustainability of its purpose.",
     contact: "Contact",
     location: "Afra City, Balqarn Governorate, Asir Region, Kingdom of Saudi Arabia",
     footerRights: "© Al-Furqan Endowment · All rights reserved",
-    donateTitle: "Donate to complete the Al-Furqan project",
-    donateBody: "For transfer details and partnership in completing the finishing works, please contact the trustee of the waqf.",
+    donateTitle: "Contribute to complete Al-Furqan Endowment",
+    donateBody: "Your contribution today is a one-time seed in an endowment that will become self-sustaining after completion. For transfer details or partnership in finishing the works, please contact the trustee board.",
     trusteeName: "Trustee",
     trusteeRole: "Waqf Trustee",
     trusteePhone: "Trustee phone",
     trusteeEmail: "Email",
-    bankTitle: "Donation channels",
+    bankTitle: "Contribution channels",
     bankName: "Bank",
     bankAccount: "Account name",
     bankIban: "IBAN",
-    bankNote: "Please contact the trustee to confirm your transfer and receive a receipt.",
+    bankNote: "Please contact the trustee board to confirm your transfer and receive a receipt.",
     timelineKicker: "Project timeline",
     timelineTitle: "Current phase: Structural skeleton",
-    timelineBody: "The concrete skeleton of the building is complete. We plan to finish all the works and bring the project into operation within one year, inshaAllah.",
+    timelineBody: "The concrete skeleton is complete. Within one year, inshaAllah, the finishing works conclude and operations begin — at which point the endowment becomes fully self-sustaining on its own income.",
     timelineSteps: [
       { t: "Phase 1", d: "Structural skeleton (completed)", s: "done" },
       { t: "Phase 2", d: "Interior & exterior finishing works", s: "now" },
@@ -281,14 +287,14 @@ function Index() {
           className="absolute inset-0 opacity-[0.07] mix-blend-overlay"
           style={{ backgroundImage: `url(${patternImg})`, backgroundSize: "400px" }}
         />
-        <div className="relative max-w-7xl mx-auto px-6 lg:px-10 pt-20 pb-28 lg:pt-28 lg:pb-36">
+        <div className="relative max-w-7xl mx-auto px-6 lg:px-10 pt-14 pb-20 lg:pt-28 lg:pb-36">
           <div className="grid lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-6 text-[color:var(--sand)]">
               <p className="font-arabic text-[color:var(--gold-soft)] text-lg mb-6" style={{ fontFamily: "var(--font-arabic)" }}>
                 {L.bismillah}
               </p>
               <p className="text-xs tracking-[0.3em] uppercase text-[color:var(--gold-soft)]/80 mb-5">{L.eyebrow}</p>
-              <h1 className="font-display text-5xl md:text-6xl lg:text-7xl leading-[1.05] mb-6">
+              <h1 className="font-display text-4xl md:text-6xl lg:text-7xl leading-[1.1] mb-5">
                 {L.heroTitle}
               </h1>
               <p className="text-xl md:text-2xl text-[color:var(--sand)]/90 max-w-xl mb-5 font-display italic">
@@ -341,15 +347,15 @@ function Index() {
       </section>
 
       {/* ABOUT */}
-      <section id="about" className="py-24 lg:py-32">
+      <section id="about" className="py-14 md:py-20 lg:py-28">
         <div className="max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-12 gap-16">
           <div className="lg:col-span-5">
             <Kicker>{L.aboutKicker}</Kicker>
-            <h2 className="font-display text-4xl md:text-5xl leading-tight text-[color:var(--emerald-deep)] mt-4">
+            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl leading-tight text-[color:var(--emerald-deep)] mt-4 font-medium">
               {L.aboutTitle}
             </h2>
-            <div className="mt-8 rounded-2xl overflow-hidden border border-border">
-              <img src={quranImg} alt="A young woman reciting the Quran" loading="lazy" width={1024} height={1024} className="w-full h-auto" />
+            <div className="mt-8 rounded-lg overflow-hidden border border-border aspect-[16/9]">
+              <img src={quranImg} alt="A young woman reciting the Quran" loading="lazy" width={1024} height={1024} className="w-full h-full object-cover" />
             </div>
           </div>
           <div className="lg:col-span-7 lg:pt-20">
@@ -360,6 +366,15 @@ function Index() {
               <div className="relative">
                 <Kicker accent>{L.masrifTitle}</Kicker>
                 <p className="mt-3 text-lg leading-relaxed text-[color:var(--emerald-deep)] font-display">{L.masrifBody}</p>
+              </div>
+            </div>
+
+            <div className="mt-6 rounded-2xl p-8 border border-[color:var(--emerald-deep)]/20 bg-[color:var(--emerald-deep)] text-[color:var(--sand)] relative overflow-hidden">
+              <div className="absolute inset-0 opacity-[0.06]" style={{ backgroundImage: `url(${patternImg})`, backgroundSize: "260px" }} />
+              <div className="relative">
+                <Kicker accent light>{L.sustainKicker}</Kicker>
+                <h3 className="font-display text-xl md:text-2xl mt-3 text-[color:var(--gold-soft)]">{L.sustainTitle}</h3>
+                <p className="mt-3 text-base leading-relaxed text-[color:var(--sand)]/85">{L.sustainBody}</p>
               </div>
             </div>
 
@@ -375,22 +390,22 @@ function Index() {
       </section>
 
       {/* PROJECT */}
-      <section id="project" className="py-24 lg:py-32 bg-[color:var(--sand)] relative overflow-hidden">
+      <section id="project" className="py-14 md:py-20 lg:py-28 bg-[color:var(--sand)] relative overflow-hidden">
         <div className="absolute inset-0 opacity-[0.05]" style={{ backgroundImage: `url(${patternImg})`, backgroundSize: "320px" }} />
         <div className="relative max-w-7xl mx-auto px-6 lg:px-10">
           <div className="max-w-3xl">
             <Kicker>{L.projectKicker}</Kicker>
-            <h2 className="font-display text-4xl md:text-5xl text-[color:var(--emerald-deep)] mt-4">{L.projectTitle}</h2>
+            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-[color:var(--emerald-deep)] mt-4 leading-tight font-medium">{L.projectTitle}</h2>
             <p className="mt-5 text-lg text-foreground/80 leading-relaxed">{L.projectBody}</p>
           </div>
 
-          <div className="mt-14 grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="mt-10 md:mt-14 -mx-6 md:mx-0 px-6 md:px-0 flex md:grid md:grid-cols-2 lg:grid-cols-4 gap-5 overflow-x-auto md:overflow-visible snap-x snap-mandatory scroll-pl-6 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
             {L.components.map((c, i) => (
-              <div key={i} className="group bg-card rounded-2xl p-7 border border-border hover:border-[color:var(--gold)] hover:shadow-[var(--shadow-elegant)] transition-all">
+              <div key={i} className="group shrink-0 w-[78%] sm:w-[55%] md:w-auto snap-start bg-card rounded-lg p-6 md:p-7 border border-border hover:border-[color:var(--gold)] hover:shadow-[var(--shadow-elegant)] transition-all">
                 <div className="w-11 h-11 rounded-lg flex items-center justify-center text-[color:var(--ink)] font-display text-lg" style={{ background: "var(--gradient-gold)" }}>
                   {String(i + 1).padStart(2, "0")}
                 </div>
-                <h3 className="font-display text-xl mt-5 text-[color:var(--emerald-deep)]">{c.t}</h3>
+                <h3 className="font-display text-xl md:text-2xl mt-5 text-[color:var(--emerald-deep)]">{c.t}</h3>
                 <p className="text-sm text-muted-foreground mt-3 leading-relaxed">{c.d}</p>
               </div>
             ))}
@@ -399,19 +414,19 @@ function Index() {
       </section>
 
       {/* TIMELINE */}
-      <section id="timeline" className="py-24 lg:py-32 bg-[color:var(--sand)]/40 border-y border-border">
+      <section id="timeline" className="py-14 md:py-20 lg:py-28 bg-[color:var(--sand)]/40 border-y border-border">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div className="max-w-3xl">
             <Kicker>{L.timelineKicker}</Kicker>
-            <h2 className="font-display text-4xl md:text-5xl text-[color:var(--emerald-deep)] mt-4 leading-tight">{L.timelineTitle}</h2>
+            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-[color:var(--emerald-deep)] mt-4 leading-tight font-medium">{L.timelineTitle}</h2>
             <p className="mt-5 text-lg text-foreground/80 leading-relaxed">{L.timelineBody}</p>
           </div>
-          <ol className="mt-14 grid md:grid-cols-2 lg:grid-cols-4 gap-5 relative">
+          <ol className="mt-10 md:mt-14 -mx-6 md:mx-0 px-6 md:px-0 flex md:grid md:grid-cols-2 lg:grid-cols-4 gap-5 overflow-x-auto md:overflow-visible snap-x snap-mandatory scroll-pl-6 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
             {L.timelineSteps.map((step, i) => {
               const isDone = step.s === "done";
               const isNow = step.s === "now";
               return (
-                <li key={i} className={`relative rounded-2xl p-7 border bg-card transition ${isNow ? "border-[color:var(--gold)] shadow-[var(--shadow-elegant)]" : "border-border"}`}>
+                <li key={i} className={`shrink-0 w-[78%] sm:w-[55%] md:w-auto snap-start relative rounded-lg p-6 md:p-7 border bg-card transition ${isNow ? "border-[color:var(--gold)] shadow-[var(--shadow-elegant)]" : "border-border"}`}>
                   <div className="flex items-center gap-3">
                     <span
                       className={`w-9 h-9 rounded-full flex items-center justify-center text-xs font-display ${
@@ -430,21 +445,21 @@ function Index() {
                       {isDone ? (isRtl ? "مكتمل" : "Done") : isNow ? (isRtl ? "قيد التنفيذ" : "In progress") : (isRtl ? "قادم" : "Upcoming")}
                     </span>
                   </div>
-                  <h3 className="font-display text-xl mt-5 text-[color:var(--emerald-deep)]">{step.t}</h3>
+                  <h3 className="font-display text-xl md:text-2xl mt-5 text-[color:var(--emerald-deep)]">{step.t}</h3>
                   <p className="text-sm text-muted-foreground mt-2 leading-relaxed">{step.d}</p>
                 </li>
               );
             })}
           </ol>
-          <div className="mt-12 grid lg:grid-cols-2 gap-8 items-center">
-            <div className="relative rounded-2xl overflow-hidden border border-[color:var(--gold)]/30 bg-card">
+          <div className="mt-10 md:mt-12 grid lg:grid-cols-2 gap-8 items-center">
+            <div className="relative rounded-lg overflow-hidden border border-[color:var(--gold)]/30 bg-card aspect-[16/9]">
               <img
                 src={buildingSkeleton.url}
                 alt={isRtl ? "صورة الموقع: المرحلة الإنشائية الحالية" : "On-site photo: current structural phase"}
                 loading="lazy"
                 width={1408}
                 height={792}
-                className="w-full h-auto block"
+                className="w-full h-full object-cover block"
               />
               <div className={`absolute top-3 ${isRtl ? "right-3" : "left-3"} inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[color:var(--emerald-deep)] text-[color:var(--sand)] text-[10px] tracking-[0.25em] uppercase`}>
                 {isRtl ? "صورة من الموقع · المرحلة الحالية" : "On site · current phase"}
@@ -466,24 +481,44 @@ function Index() {
       </section>
 
       {/* PARTNERS */}
-      <section id="works" className="py-16 lg:py-20 bg-[color:var(--sand)]/30 border-y border-border">
+      <section id="works" className="py-12 md:py-16 lg:py-20 bg-[color:var(--sand)]/30 border-y border-border">
         <div className="max-w-6xl mx-auto px-6 lg:px-10">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-8">
             <div className="max-w-2xl">
               <Kicker>{L.worksKicker}</Kicker>
-              <h2 className="font-display text-2xl md:text-3xl text-[color:var(--emerald-deep)] mt-3 leading-snug">{L.worksTitle}</h2>
+              <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-[color:var(--emerald-deep)] mt-3 leading-tight font-medium">{L.worksTitle}</h2>
             </div>
             <a href="#donate" className="self-start inline-flex px-5 py-2.5 rounded-md text-sm font-medium text-[color:var(--ink)] shadow-[var(--shadow-gold)] whitespace-nowrap" style={{ background: "var(--gradient-gold)" }}>
               {L.donateCta}
             </a>
           </div>
-          <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+          {/* Mobile accordion */}
+          <details className="sm:hidden group rounded-lg border border-border/70 bg-card/70 backdrop-blur-sm">
+            <summary className="flex items-center justify-between px-4 py-3 cursor-pointer text-sm font-display text-[color:var(--emerald-deep)] list-none">
+              <span>{isRtl ? "عرض بنود التشطيب (١١)" : "View all 11 items"}</span>
+              <span className="text-[color:var(--gold)] group-open:rotate-180 transition">▾</span>
+            </summary>
+            <ul className="px-2 pb-3 grid gap-2">
+              {L.worksList.map((w, i) => {
+                const Icon = worksIcons[i] ?? Building2;
+                return (
+                  <li key={i} className="flex items-center gap-3 px-3 py-2 rounded-lg">
+                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md border border-[color:var(--emerald-deep)]/15 text-[color:var(--emerald-deep)] bg-[color:var(--sand)]/60">
+                      <Icon size={14} strokeWidth={1.75} />
+                    </span>
+                    <span className="text-sm text-foreground/90 leading-snug">{w}</span>
+                  </li>
+                );
+              })}
+            </ul>
+          </details>
+          <ul className="hidden sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
             {L.worksList.map((w, i) => {
               const Icon = worksIcons[i] ?? Building2;
               return (
                 <li
                   key={i}
-                  className="group relative flex items-center gap-3 rounded-xl border border-border/70 bg-card/70 backdrop-blur-sm px-4 py-3 hover:border-[color:var(--gold)] hover:shadow-[var(--shadow-elegant)] transition-all"
+                  className="group relative flex items-center gap-3 rounded-lg border border-border/70 bg-card/70 backdrop-blur-sm px-4 py-3 hover:border-[color:var(--gold)] hover:shadow-[var(--shadow-elegant)] transition-all"
                 >
                   <span
                     className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-[color:var(--emerald-deep)]/15 text-[color:var(--emerald-deep)] bg-[color:var(--sand)]/60 group-hover:bg-[color:var(--emerald-deep)] group-hover:text-[color:var(--sand)] transition-colors"
@@ -503,25 +538,25 @@ function Index() {
         </div>
       </section>
 
-      <section id="partners" className="py-24 lg:py-32">
+      <section id="partners" className="py-14 md:py-20 lg:py-28">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">
           <div className="max-w-3xl">
             <Kicker>{L.partnersKicker}</Kicker>
-            <h2 className="font-display text-3xl md:text-4xl text-[color:var(--emerald-deep)] mt-4">{L.partnersTitle}</h2>
+            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-[color:var(--emerald-deep)] mt-4 leading-tight font-medium">{L.partnersTitle}</h2>
           </div>
-          <div className="mt-12 grid md:grid-cols-3 gap-5">
+          <div className="mt-10 md:mt-12 -mx-6 md:mx-0 px-6 md:px-0 flex md:grid md:grid-cols-3 gap-5 overflow-x-auto md:overflow-visible snap-x snap-mandatory scroll-pl-6 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
             {L.partners.map((p, i) => (
               <a
                 key={i}
                 href={p.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group rounded-2xl p-7 border border-border bg-card hover:border-[color:var(--gold)] hover:shadow-[var(--shadow-elegant)] transition-all flex flex-col"
+                className="group shrink-0 w-[78%] sm:w-[55%] md:w-auto snap-start rounded-lg p-6 md:p-7 border border-border bg-card hover:border-[color:var(--gold)] hover:shadow-[var(--shadow-elegant)] transition-all flex flex-col"
               >
                 <div className="w-14 h-14 rounded-xl flex items-center justify-center border border-[color:var(--emerald-deep)]/20 bg-[color:var(--sand)]">
                   <PartnerGlyph index={i} />
                 </div>
-                <h3 className="font-display text-lg mt-5 text-[color:var(--emerald-deep)] leading-snug">{p.name}</h3>
+                <h3 className="font-display text-xl md:text-2xl mt-5 text-[color:var(--emerald-deep)] leading-snug">{p.name}</h3>
                 <p className="text-xs uppercase tracking-widest text-muted-foreground mt-2">{p.role}</p>
                 <span className="mt-5 text-xs text-[color:var(--gold)] group-hover:underline" dir="ltr">
                   {new URL(p.url).hostname.replace(/^www\./, "")} ↗
@@ -533,11 +568,11 @@ function Index() {
       </section>
 
       {/* LOCATION */}
-      <section id="location" className="py-24 lg:py-32 bg-[color:var(--sand)]/40 border-y border-border">
+      <section id="location" className="py-14 md:py-20 lg:py-28 bg-[color:var(--sand)]/40 border-y border-border">
         <div className="max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-12 gap-10 items-start">
           <div className="lg:col-span-5">
             <Kicker>{L.locationKicker}</Kicker>
-            <h2 className="font-display text-4xl md:text-5xl text-[color:var(--emerald-deep)] mt-4 leading-tight">{L.locationTitle}</h2>
+            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl text-[color:var(--emerald-deep)] mt-4 leading-tight font-medium">{L.locationTitle}</h2>
             <p className="mt-5 text-base text-foreground/80 leading-relaxed">{L.locationAddress}</p>
             <a
               href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent("JXWX+9V Sabt Al Alayah")}`}
@@ -549,12 +584,13 @@ function Index() {
               {isRtl ? "افتح في خرائط جوجل" : "Open in Google Maps"}
             </a>
           </div>
-          <div className="lg:col-span-7 rounded-2xl overflow-hidden border border-border shadow-[var(--shadow-elegant)]">
+          <div className="lg:col-span-7 rounded-lg overflow-hidden border border-border shadow-[var(--shadow-elegant)] aspect-[16/9]">
             <iframe
               title="Al-Furqan Waqf location"
               src={`https://www.google.com/maps?q=${encodeURIComponent("JXWX+9V Sabt Al Alayah")}&output=embed`}
               width="100%"
-              height="420"
+              height="100%"
+              className="w-full h-full"
               style={{ border: 0 }}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
@@ -564,12 +600,12 @@ function Index() {
         </div>
       </section>
 
-      <section className="relative py-24 lg:py-32 overflow-hidden">
+      <section className="relative py-14 md:py-20 lg:py-28 overflow-hidden">
         <img src={mosqueImg} alt="" loading="lazy" width={1024} height={1024} className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0" style={{ background: "linear-gradient(180deg, oklch(0.18 0.04 160 / 0.92), oklch(0.22 0.06 160 / 0.88))" }} />
         <div className="relative max-w-5xl mx-auto px-6 lg:px-10 text-center text-[color:var(--sand)]">
           <Kicker accent>{L.impactKicker}</Kicker>
-          <h2 className="font-display text-4xl md:text-5xl lg:text-6xl mt-5 leading-tight">{L.impactTitle}</h2>
+          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl mt-5 leading-tight font-medium">{L.impactTitle}</h2>
           <p className="mt-6 text-lg text-[color:var(--sand)]/80 max-w-2xl mx-auto leading-relaxed">{L.impactBody}</p>
           <div className="mt-14 grid grid-cols-3 gap-4 md:gap-10">
             {L.impactStats.map((s, i) => (
@@ -583,11 +619,11 @@ function Index() {
       </section>
 
       {/* TRUSTEE + DONATE */}
-      <section id="trustee" className="py-24 lg:py-32 bg-[color:var(--sand)]">
+      <section id="trustee" className="py-14 md:py-20 lg:py-28 bg-[color:var(--sand)]">
         <div className="max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-2 gap-12">
-          <div className="rounded-2xl p-10 lg:p-12 bg-card border border-border">
+          <div className="rounded-lg p-8 md:p-10 lg:p-12 bg-card border border-border">
             <Kicker>{L.trusteeKicker}</Kicker>
-            <h3 className="font-display text-3xl md:text-4xl text-[color:var(--emerald-deep)] mt-3">{L.trusteeTitle}</h3>
+            <h3 className="font-display text-2xl md:text-3xl text-[color:var(--emerald-deep)] mt-3">{L.trusteeTitle}</h3>
             <p className="mt-6 text-base text-foreground/80 leading-relaxed">{L.trusteeBody}</p>
             <dl className="mt-8 pt-8 border-t border-border grid sm:grid-cols-2 gap-4 text-sm">
               <div>
@@ -609,11 +645,11 @@ function Index() {
             </dl>
           </div>
 
-          <div id="donate" className="rounded-2xl p-10 lg:p-12 relative overflow-hidden text-[color:var(--sand)]" style={{ background: "var(--gradient-hero)" }}>
+          <div id="donate" className="rounded-lg p-8 md:p-10 lg:p-12 relative overflow-hidden text-[color:var(--sand)]" style={{ background: "var(--gradient-hero)" }}>
             <div className="absolute inset-0 opacity-[0.08]" style={{ backgroundImage: `url(${patternImg})`, backgroundSize: "300px" }} />
             <div className="relative">
               <Kicker accent light>{L.nav.donate}</Kicker>
-              <h3 className="font-display text-3xl md:text-4xl mt-3">{L.donateTitle}</h3>
+              <h3 className="font-display text-2xl md:text-3xl mt-3">{L.donateTitle}</h3>
               <p className="mt-5 text-[color:var(--sand)]/80 leading-relaxed">{L.donateBody}</p>
               <div className="mt-8 rounded-xl border border-[color:var(--gold-soft)]/30 bg-black/20 backdrop-blur-sm p-6 space-y-4">
                 <div className="text-[10px] tracking-[0.3em] uppercase text-[color:var(--gold-soft)]">{L.bankTitle}</div>
