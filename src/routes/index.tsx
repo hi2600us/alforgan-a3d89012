@@ -37,9 +37,9 @@ const worksIcons = [
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "وقف الفرقان | Al-Furqan Endowment — Balqarn" },
-      { name: "description", content: "Support the Al-Furqan Waqf: finishing a hospitality complex that funds Quran memorization for girls and the upkeep of Al-Furqan Mosque in Balqarn, Saudi Arabia." },
-      { property: "og:title", content: "وقف الفرقان | Al-Furqan Endowment" },
+      { title: "وقف الفرقان | Alforgan Endowment — Balqarn" },
+      { name: "description", content: "Support the Alforgan Waqf: finishing a hospitality complex that funds Quran memorization for girls and the upkeep of Alforgan Mosque in Balqarn, Saudi Arabia." },
+      { property: "og:title", content: "وقف الفرقان | Alforgan Endowment" },
       { property: "og:description", content: "Endowment supporting Quran memorization and mosques in Balqarn, Saudi Arabia." },
       { property: "og:image", content: buildingAsset.url },
       { name: "twitter:image", content: buildingAsset.url },
@@ -150,9 +150,9 @@ const t = {
     nav: { about: "About", project: "Project", works: "Works", trustee: "Trustee", donate: "Contribute" },
     bismillah: "In the name of Allah, the Most Gracious, the Most Merciful",
     eyebrow: "Certified Charitable Endowment · General Authority of Awqaf, KSA",
-    heroTitle: "Al-Furqan Endowment",
+    heroTitle: "Alforgan Endowment",
     heroSub: "A lasting endowment partnership for the Quran and the mosques of Balqarn.",
-    heroBody: "A family waqf investing the endowed building in Afra, Balqarn, for the benefit of the Balqarn Quran Memorization Society and the upkeep of Al-Furqan Mosque. The endowment is now in its final phase before completion. Once operational, it will become fully self-sustaining and will not require any future contributions — your contribution today is a one-time seed for a permanent, self-funding impact.",
+    heroBody: "A family waqf investing the endowed building in Afra, Balqarn, for the benefit of the Balqarn Quran Memorization Society and the upkeep of Alforgan Mosque. The endowment is now in its final phase before completion. Once operational, it will become fully self-sustaining and will not require any future contributions — your contribution today is a one-time seed for a permanent, self-funding impact.",
     donateCta: "Join the impact",
     learn: "Learn about the waqf",
     certNo: "Waqf Certificate No.",
@@ -171,15 +171,15 @@ const t = {
     aboutTitle: "The endowment of Sheikh Abdullah bin Saad bin Hanash Al-Qarni",
     aboutBody: "An endowment covered by Deed No. (361188322) issued by the General Court of Balqarn on 20/06/1436 AH, and the trusteeship deed issued by the Personal Status Court in Abha No. (47312974 51) on 26/02/1447 AH. It is established on a building owned per the Real Estate Exchange deed No. (4606720030 23) dated 30/07/1447 AH, located in Balqarn, on the condition that the trustee be from the descendants of the founder.",
     masrifTitle: "Beneficiary",
-    masrifBody: "Investment of the building for the benefit of the Balqarn Quran Memorization Charitable Society, and to spend on the needs of Al-Furqan Mosque located east of the building.",
+    masrifBody: "Investment of the building for the benefit of the Balqarn Quran Memorization Charitable Society, and to spend on the needs of Alforgan Mosque located east of the building.",
     projectKicker: "The project",
-    projectTitle: "Al-Furqan Mixed-Use Complex",
+    projectTitle: "Alforgan Mixed-Use Complex",
     projectBody: "Hospitality building · Educational nursery · Café · Reception lounges — in the city of Afra, Balqarn Governorate, Asir Region, Saudi Arabia.",
     components: [
       { t: "Hospitality Building", d: "Hotel suites and rooms serving visitors and generating sustainable waqf income." },
       { t: "Educational Nursery", d: "A nursery dedicated to grounding young children in the Holy Quran in a safe environment." },
       { t: "Café & Reception", d: "Community spaces that serve the region and grow the endowment's revenue." },
-      { t: "Al-Furqan Mosque", d: "Funding the needs and maintenance of the mosque located east of the building." },
+      { t: "Alforgan Mosque", d: "Funding the needs and maintenance of the mosque located east of the building." },
     ],
     worksKicker: "Finishing needs",
     worksTitle: "Works completed through your partnership",
@@ -209,8 +209,8 @@ const t = {
     trusteeBody: "Per the founder's condition, trusteeship is held by a descendant. The trustee board is accountable before Allah, then before the General Authority of Awqaf, for the sound management of the waqf and the sustainability of its purpose.",
     contact: "Contact",
     location: "Afra City, Balqarn Governorate, Asir Region, Kingdom of Saudi Arabia",
-    footerRights: "© Al-Furqan Endowment · All rights reserved",
-    donateTitle: "Contribute to complete Al-Furqan Endowment",
+    footerRights: "© Alforgan Endowment · All rights reserved",
+    donateTitle: "Contribute to complete Alforgan Endowment",
     donateBody: "Your contribution today is a one-time seed in an endowment that will become self-sustaining after completion. For transfer details or partnership in finishing the works, please contact the trustee board.",
     trusteeName: "Trustee",
     trusteeRole: "Waqf Trustee",
@@ -330,7 +330,7 @@ function Index() {
               <div className="relative flex items-end justify-center min-h-[420px]">
                 <img
                   src={buildingClean}
-                  alt="Al-Furqan endowment building rendering in Balqarn"
+                  alt="Alforgan endowment building rendering in Balqarn"
                   className="w-full h-auto block drop-shadow-[0_25px_45px_rgba(0,0,0,0.55)]"
                   width={662}
                   height={610}
@@ -586,7 +586,7 @@ function Index() {
           </div>
           <div className="lg:col-span-7 rounded-lg overflow-hidden border border-border shadow-[var(--shadow-elegant)] aspect-[16/9]">
             <iframe
-              title="Al-Furqan Waqf location"
+              title="Alforgan Waqf location"
               src={`https://www.google.com/maps?q=${encodeURIComponent("JXWX+9V Sabt Al Alayah")}&output=embed`}
               width="100%"
               height="100%"
@@ -660,7 +660,7 @@ function Index() {
                   </div>
                   <div className="flex justify-between gap-4 border-b border-white/10 pb-2">
                     <span className="text-[color:var(--sand)]/60">{L.bankAccount}</span>
-                    <span className="font-display text-[color:var(--sand)] text-right">{isRtl ? "وقف الفرقان الخيري ودار نسائية لتحفيظ القرآن\u00a0" : "Al-Furqan Charitable Endowment"}</span>
+                    <span className="font-display text-[color:var(--sand)] text-right">{isRtl ? "وقف الفرقان الخيري ودار نسائية لتحفيظ القرآن\u00a0" : "Alforgan Charitable Endowment"}</span>
                   </div>
                   <div className="flex justify-between gap-4">
                     <span className="text-[color:var(--sand)]/60">{L.bankIban}</span>
