@@ -713,9 +713,9 @@ function Kicker({ children, accent, light }: { children: React.ReactNode; accent
 
 function DetailRow({ label, value }: { label: string; value: string }) {
   return (
-    <div className="border border-border rounded-lg p-4 bg-card">
-      <dt className="text-[10px] uppercase tracking-widest text-muted-foreground">{label}</dt>
-      <dd className="font-display text-base text-[color:var(--emerald-deep)] mt-1" dir="ltr">{value}</dd>
+    <div className="border border-border rounded-lg px-4 py-3 bg-card flex items-center justify-between gap-4">
+      <dt className="text-[11px] uppercase tracking-widest text-muted-foreground shrink-0">{label}</dt>
+      <dd className="font-display text-sm md:text-base text-[color:var(--emerald-deep)] truncate" dir="ltr">{value}</dd>
     </div>
   );
 }
