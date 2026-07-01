@@ -252,7 +252,7 @@ function Index() {
       <header className="sticky top-0 z-50 backdrop-blur-md bg-background/80 border-b border-border/60">
         <nav className="max-w-7xl mx-auto px-6 lg:px-10 h-20 flex items-center justify-between">
           <a href="#top" className="flex items-center gap-3">
-            <Mark />
+            <img src="/logo.png" alt="Alforgan logo" className="h-10 w-auto" />
             <div className="leading-tight">
               <div className="font-display text-xl text-[color:var(--emerald-deep)]">{L.heroTitle}</div>
               <div className="text-[10px] tracking-[0.25em] uppercase text-muted-foreground">{lang === "ar" ? "وقف خيري" : "Charitable Waqf"}</div>
