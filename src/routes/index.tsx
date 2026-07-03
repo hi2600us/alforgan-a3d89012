@@ -636,7 +636,7 @@ function Index() {
               </div>
               <div>
                 <dt className="text-[10px] uppercase tracking-widest text-muted-foreground mb-1">{L.trusteeEmail}</dt>
-                <dd className="font-display text-base text-[color:var(--emerald-deep)]" dir="ltr">info@alforgan.org</dd>
+                <dd className="font-display text-base text-[color:var(--emerald-deep)]" dir="ltr">admin@alforgan.org</dd>
               </div>
               <div>
                 <dt className="text-[10px] uppercase tracking-widest text-muted-foreground mb-1">{L.contact}</dt>
@@ -669,7 +669,7 @@ function Index() {
                 </div>
                 <p className="text-xs text-[color:var(--sand)]/60 leading-relaxed pt-2 border-t border-white/10">{L.bankNote}</p>
               </div>
-              <a href={`mailto:info@alforgan.org`} className="inline-flex mt-6 px-7 py-3.5 rounded-md font-medium text-[color:var(--ink)] shadow-[var(--shadow-gold)]" style={{ background: "var(--gradient-gold)" }}>
+              <a href={`mailto:admin@alforgan.org`} className="inline-flex mt-6 px-7 py-3.5 rounded-md font-medium text-[color:var(--ink)] shadow-[var(--shadow-gold)]" style={{ background: "var(--gradient-gold)" }}>
                 {isRtl ? "تواصل مع الناظر" : "Contact the trustee"}
               </a>
               <p className="mt-6 text-xs text-[color:var(--sand)]/60 leading-relaxed">
