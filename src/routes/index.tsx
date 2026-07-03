@@ -618,51 +618,25 @@ function Index() {
         </div>
       </section>
 
-      {/* COMING SOON — HALAQAT & RECITATION */}
-      <section id="coming-soon" className="py-14 md:py-20 lg:py-28 bg-card border-y border-border">
-        <div className="max-w-6xl mx-auto px-6 lg:px-10">
-          <div className="text-center max-w-3xl mx-auto">
-            <span className="inline-block text-[10px] tracking-[0.3em] uppercase text-[color:var(--gold-soft)] font-medium px-3 py-1 rounded-full border border-[color:var(--gold-soft)]/40">
-              {isRtl ? "قريباً بإذن الله" : "Coming soon, inshaAllah"}
-            </span>
-            <h2 className="font-display text-3xl md:text-4xl lg:text-5xl mt-5 leading-tight font-medium text-[color:var(--emerald-deep)]">
-              {isRtl ? "حلقات تحفيظ القرآن الكريم" : "Quran Memorization Circles"}
-            </h2>
-            <p className="mt-5 text-lg text-foreground/80 leading-relaxed">
-              {isRtl
-                ? "سنفتح قريباً باب التسجيل في حلقات تحفيظ القرآن الكريم للرجال والنساء والأطفال، بإشراف معلمين مجازين."
-                : "Registration will soon open for our Quran memorization circles for men, women, and children — guided by certified teachers."}
-            </p>
-          </div>
-          <div className="mt-12 grid md:grid-cols-2 gap-6">
-            <div className="rounded-lg p-8 border border-border bg-[color:var(--sand)]/50">
-              <div className="text-3xl">📖</div>
-              <h3 className="font-display text-xl md:text-2xl mt-4 text-[color:var(--emerald-deep)]">
-                {isRtl ? "التسجيل في الحلقات" : "Join a Circle"}
-              </h3>
-              <p className="mt-3 text-foreground/80 leading-relaxed">
-                {isRtl
-                  ? "حلقات منتظمة للحفظ والمراجعة والتجويد، حضورياً في مجمّع الفرقان وعن بُعد."
-                  : "Regular circles for memorization, revision, and tajweed — on-site at Alforgan and online."}
+      {/* ANNOUNCEMENT — HALAQAT & RECITATION */}
+      <section id="announcement" className="py-6 bg-[color:var(--emerald-deep)] text-[color:var(--sand)]">
+        <div className="max-w-6xl mx-auto px-6 lg:px-10 flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="flex items-center gap-4">
+            <span className="text-2xl shrink-0">🎤</span>
+            <div>
+              <p className="font-display text-lg md:text-xl font-medium">
+                {isRtl ? "قريباً بإذن الله: حلقات تحفيظ القرآن الكريم" : "Coming soon, inshaAllah: Quran memorization circles"}
               </p>
-            </div>
-            <div className="rounded-lg p-8 border border-border bg-[color:var(--sand)]/50">
-              <div className="text-3xl">🎤</div>
-              <h3 className="font-display text-xl md:text-2xl mt-4 text-[color:var(--emerald-deep)]">
-                {isRtl ? "التلاوة الذكية بالذكاء الاصطناعي" : "AI-Assisted Recitation"}
-              </h3>
-              <p className="mt-3 text-foreground/80 leading-relaxed">
+              <p className="text-sm text-[color:var(--sand)]/80 mt-0.5">
                 {isRtl
-                  ? "اقرأ القرآن الكريم، ويستمع إليك البرنامج، فإذا أخطأت أوقفك وصحّح لك التلاوة فوراً — رفيق ذكي لمراجعة الحفظ."
-                  : "Recite the Quran aloud; the program listens, and if you make a mistake it stops you and corrects your recitation instantly — a smart companion for your revision."}
+                  ? "اقرأ والبرنامج يستمع؛ إن أخطأت أوقفك وصحّح التلاوة فوراً."
+                  : "Recite and the program listens; if you make a mistake it stops and corrects you instantly."}
               </p>
             </div>
           </div>
-          <div className="mt-10 text-center">
-            <a href="mailto:admin@alforgan.org?subject=Halaqat%20Registration%20Interest" className="inline-flex px-7 py-3.5 rounded-md font-medium text-[color:var(--sand)] shadow-[var(--shadow-gold)]" style={{ background: "var(--gradient-hero)" }}>
-              {isRtl ? "سجّل اهتمامك المبكر" : "Register your early interest"}
-            </a>
-          </div>
+          <a href="mailto:admin@alforgan.org?subject=Halaqat%20Registration%20Interest" className="shrink-0 inline-flex px-5 py-2 rounded-full font-medium text-[color:var(--emerald-deep)] bg-[color:var(--sand)] hover:bg-white transition-colors text-sm">
+            {isRtl ? "سجّل اهتمامك" : "Register interest"}
+          </a>
         </div>
       </section>
 
