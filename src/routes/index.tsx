@@ -454,7 +454,7 @@ function Index() {
           <div className="mt-10 md:mt-12 grid lg:grid-cols-2 gap-8 items-center">
             <div className="relative rounded-lg overflow-hidden border border-[color:var(--gold)]/30 bg-card aspect-[16/9]">
               <img
-                src={buildingSkeleton.url}
+                src={buildingSkeleton}
                 alt={isRtl ? "صورة الموقع: المرحلة الإنشائية الحالية" : "On-site photo: current structural phase"}
                 loading="lazy"
                 width={1408}
