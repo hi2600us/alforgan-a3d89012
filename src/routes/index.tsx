@@ -1,8 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import buildingAsset from "@/assets/furqan-building.png.asset.json";
+import buildingAsset from "@/assets/furqan-building.png";
 import buildingClean from "@/assets/furqan-building-clean.png";
-import buildingSkeleton from "@/assets/furqan-building-skeleton.png.asset.json";
+import buildingSkeleton from "@/assets/furqan-building-skeleton.png";
 import patternImg from "@/assets/pattern.jpg";
 import quranImg from "@/assets/quran-study.jpg";
 import mosqueImg from "@/assets/mosque-interior.jpg";
@@ -41,8 +41,8 @@ export const Route = createFileRoute("/")({
       { name: "description", content: "Support the Alforgan Waqf: finishing a hospitality complex that funds Quran memorization for girls and the upkeep of Alforgan Mosque in Balqarn, Saudi Arabia." },
       { property: "og:title", content: "وقف الفرقان | Alforgan Endowment" },
       { property: "og:description", content: "Endowment supporting Quran memorization and mosques in Balqarn, Saudi Arabia." },
-      { property: "og:image", content: buildingAsset.url },
-      { name: "twitter:image", content: buildingAsset.url },
+      { property: "og:image", content: buildingAsset },
+      { name: "twitter:image", content: buildingAsset },
     ],
   }),
   component: Index,
@@ -454,7 +454,7 @@ function Index() {
           <div className="mt-10 md:mt-12 grid lg:grid-cols-2 gap-8 items-center">
             <div className="relative rounded-lg overflow-hidden border border-[color:var(--gold)]/30 bg-card aspect-[16/9]">
               <img
-                src={buildingSkeleton.url}
+                src={buildingSkeleton}
                 alt={isRtl ? "صورة الموقع: المرحلة الإنشائية الحالية" : "On-site photo: current structural phase"}
                 loading="lazy"
                 width={1408}
