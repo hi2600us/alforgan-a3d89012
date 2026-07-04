@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import buildingAsset from "@/assets/furqan-building.png";
 import buildingClean from "@/assets/furqan-building-clean.png";
@@ -18,6 +18,8 @@ import {
   Wind,
   Trees,
   Sofa,
+  BookOpenCheck,
+  Mic,
 } from "lucide-react";
 
 const worksIcons = [
