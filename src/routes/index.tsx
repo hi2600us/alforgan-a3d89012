@@ -652,9 +652,14 @@ function Index() {
               </p>
             </div>
           </div>
-          <a href="mailto:admin@alforgan.org?subject=Halaqat%20Registration%20Interest" className="shrink-0 inline-flex px-5 py-2 rounded-full font-medium text-[color:var(--emerald-deep)] bg-[color:var(--sand)] hover:bg-white transition-colors text-sm">
-            {isRtl ? "سجّل اهتمامك" : "Register interest"}
-          </a>
+          <div className="shrink-0 flex flex-wrap gap-2 justify-center">
+            <Link to="/halaqat-interest" className="inline-flex px-5 py-2 rounded-full font-medium text-[color:var(--emerald-deep)] bg-[color:var(--sand)] hover:bg-white transition-colors text-sm">
+              {isRtl ? "سجّل اهتمامك" : "Register interest"}
+            </Link>
+            <Link to="/recite" className="inline-flex px-5 py-2 rounded-full font-medium border border-[color:var(--gold-soft)]/50 text-[color:var(--sand)] hover:bg-white/10 transition-colors text-sm">
+              {isRtl ? "جرّب: اقرأ ويستمع" : "Try: Recite & listen"}
+            </Link>
+          </div>
         </div>
       </section>
 
