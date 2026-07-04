@@ -269,6 +269,22 @@ function Index() {
             <a href="#trustee" className="hover:text-[color:var(--emerald-deep)] transition">{L.nav.trustee}</a>
           </div>
           <div className="flex items-center gap-3">
+            <Link
+              to="/halaqat-interest"
+              aria-label={isRtl ? "سجّل اهتمامك بحلقات تحفيظ القرآن" : "Register interest — Quran circles"}
+              title={isRtl ? "سجّل اهتمامك بحلقات التحفيظ" : "Register interest — Quran circles"}
+              className="hidden sm:inline-flex h-9 w-9 items-center justify-center rounded-md border border-border hover:border-[color:var(--gold)] hover:text-[color:var(--emerald-deep)] transition"
+            >
+              <BookOpenCheck size={16} />
+            </Link>
+            <Link
+              to="/recite"
+              aria-label={isRtl ? "اقرأ والبرنامج يستمع" : "Recite — the app listens"}
+              title={isRtl ? "اقرأ والبرنامج يستمع ويصحّح" : "Recite — the app listens & corrects"}
+              className="hidden sm:inline-flex h-9 w-9 items-center justify-center rounded-md border border-border hover:border-[color:var(--gold)] hover:text-[color:var(--emerald-deep)] transition"
+            >
+              <Mic size={16} />
+            </Link>
             <button
               onClick={() => setLang(lang === "ar" ? "en" : "ar")}
               className="text-xs font-medium tracking-wider uppercase px-3 py-2 rounded-md border border-border hover:border-[color:var(--gold)] transition"
