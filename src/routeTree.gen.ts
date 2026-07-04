@@ -9,8 +9,20 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as ReciteRouteImport } from './routes/recite'
+import { Route as HalaqatInterestRouteImport } from './routes/halaqat-interest'
 import { Route as IndexRouteImport } from './routes/index'
 
+const ReciteRoute = ReciteRouteImport.update({
+  id: '/recite',
+  path: '/recite',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HalaqatInterestRoute = HalaqatInterestRouteImport.update({
+  id: '/halaqat-interest',
+  path: '/halaqat-interest',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +31,50 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/halaqat-interest': typeof HalaqatInterestRoute
+  '/recite': typeof ReciteRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/halaqat-interest': typeof HalaqatInterestRoute
+  '/recite': typeof ReciteRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/halaqat-interest': typeof HalaqatInterestRoute
+  '/recite': typeof ReciteRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/halaqat-interest' | '/recite'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/halaqat-interest' | '/recite'
+  id: '__root__' | '/' | '/halaqat-interest' | '/recite'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  HalaqatInterestRoute: typeof HalaqatInterestRoute
+  ReciteRoute: typeof ReciteRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/recite': {
+      id: '/recite'
+      path: '/recite'
+      fullPath: '/recite'
+      preLoaderRoute: typeof ReciteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/halaqat-interest': {
+      id: '/halaqat-interest'
+      path: '/halaqat-interest'
+      fullPath: '/halaqat-interest'
+      preLoaderRoute: typeof HalaqatInterestRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,6 +87,8 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  HalaqatInterestRoute: HalaqatInterestRoute,
+  ReciteRoute: ReciteRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

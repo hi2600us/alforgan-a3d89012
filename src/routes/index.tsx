@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import buildingAsset from "@/assets/furqan-building.png";
 import buildingClean from "@/assets/furqan-building-clean.png";
@@ -18,6 +18,8 @@ import {
   Wind,
   Trees,
   Sofa,
+  BookOpenCheck,
+  Mic,
 } from "lucide-react";
 
 const worksIcons = [
@@ -267,6 +269,22 @@ function Index() {
             <a href="#trustee" className="hover:text-[color:var(--emerald-deep)] transition">{L.nav.trustee}</a>
           </div>
           <div className="flex items-center gap-3">
+            <Link
+              to="/halaqat-interest"
+              aria-label={isRtl ? "سجّل اهتمامك بحلقات تحفيظ القرآن" : "Register interest — Quran circles"}
+              title={isRtl ? "سجّل اهتمامك بحلقات التحفيظ" : "Register interest — Quran circles"}
+              className="hidden sm:inline-flex h-9 w-9 items-center justify-center rounded-md border border-border hover:border-[color:var(--gold)] hover:text-[color:var(--emerald-deep)] transition"
+            >
+              <BookOpenCheck size={16} />
+            </Link>
+            <Link
+              to="/recite"
+              aria-label={isRtl ? "اقرأ والبرنامج يستمع" : "Recite — the app listens"}
+              title={isRtl ? "اقرأ والبرنامج يستمع ويصحّح" : "Recite — the app listens & corrects"}
+              className="hidden sm:inline-flex h-9 w-9 items-center justify-center rounded-md border border-border hover:border-[color:var(--gold)] hover:text-[color:var(--emerald-deep)] transition"
+            >
+              <Mic size={16} />
+            </Link>
             <button
               onClick={() => setLang(lang === "ar" ? "en" : "ar")}
               className="text-xs font-medium tracking-wider uppercase px-3 py-2 rounded-md border border-border hover:border-[color:var(--gold)] transition"
@@ -634,9 +652,14 @@ function Index() {
               </p>
             </div>
           </div>
-          <a href="mailto:admin@alforgan.org?subject=Halaqat%20Registration%20Interest" className="shrink-0 inline-flex px-5 py-2 rounded-full font-medium text-[color:var(--emerald-deep)] bg-[color:var(--sand)] hover:bg-white transition-colors text-sm">
-            {isRtl ? "سجّل اهتمامك" : "Register interest"}
-          </a>
+          <div className="shrink-0 flex flex-wrap gap-2 justify-center">
+            <Link to="/halaqat-interest" className="inline-flex px-5 py-2 rounded-full font-medium text-[color:var(--emerald-deep)] bg-[color:var(--sand)] hover:bg-white transition-colors text-sm">
+              {isRtl ? "سجّل اهتمامك" : "Register interest"}
+            </Link>
+            <Link to="/recite" className="inline-flex px-5 py-2 rounded-full font-medium border border-[color:var(--gold-soft)]/50 text-[color:var(--sand)] hover:bg-white/10 transition-colors text-sm">
+              {isRtl ? "جرّب: اقرأ ويستمع" : "Try: Recite & listen"}
+            </Link>
+          </div>
         </div>
       </section>
 
