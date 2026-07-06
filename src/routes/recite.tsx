@@ -190,8 +190,13 @@ function RecitePage() {
       micStreamRef.current = await navigator.mediaDevices.getUserMedia({ audio: true });
     } catch (err) {
       const name = (err as { name?: string })?.name ?? "";
-      if (name === "NotAllowedError") setErrorMsg("لم يتم السماح باستخدام الميكروفون. فعّل الإذن من إعدادات المتصفح.");
+      const inIframe = typeof window !== "undefined" && window.self !== window.top;
+      if (name === "NotAllowedError" || name === "SecurityError") {
+        if (inIframe) setErrorMsg("لا يمكن استخدام الميكروفون داخل المعاينة المضمّنة (iframe). افتح الصفحة في نافذة جديدة عبر الرابط بالأسفل، ثم اسمح بالميكروفون.");
+        else setErrorMsg("لم يتم السماح باستخدام الميكروفون. اضغط أيقونة القفل 🔒 بجوار العنوان في المتصفح واختر «السماح» للميكروفون، ثم أعد المحاولة. تأكّد أيضاً أن الموقع يعمل عبر HTTPS.");
+      }
       else if (name === "NotFoundError") setErrorMsg("لم يتم العثور على ميكروفون متصل بالجهاز.");
+      else if (name === "NotReadableError") setErrorMsg("الميكروفون قيد الاستخدام بواسطة تطبيق آخر. أغلق التطبيقات الأخرى وأعد المحاولة.");
       else setErrorMsg("تعذّر تشغيل الميكروفون: " + (name || "خطأ غير معروف"));
       setStatus("error");
       return;
@@ -445,6 +450,14 @@ function RecitePage() {
         {status === "error" && errorMsg && (
           <div className="mt-6 rounded-xl border border-red-300 bg-red-50 p-5">
             <p className="text-sm text-red-700">{errorMsg}</p>
+            {typeof window !== "undefined" && window.self !== window.top && (
+              <a
+                href={typeof window !== "undefined" ? window.location.href : "#"}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-3 inline-block text-sm underline text-[color:var(--emerald-deep)]"
+              >افتح الصفحة في نافذة جديدة ←</a>
+            )}
           </div>
         )}
 
