@@ -19,13 +19,15 @@ await build({
 
 // 2) Render and inject
 const { render } = await import(pathToFileURL(root + "/.prerender/prerender-entry.js").href);
-const appHtml = render();
-const indexPath = root + "/dist/index.html";
-let html = readFileSync(indexPath, "utf-8");
-if (!html.includes('<div id="root"></div>')) {
-  throw new Error("root placeholder not found in dist/index.html");
+for (const [lang, rel] of [["ar", "/dist/index.html"], ["en", "/dist/en/index.html"]]) {
+  const appHtml = render(lang);
+  const indexPath = root + rel;
+  let html = readFileSync(indexPath, "utf-8");
+  if (!html.includes('<div id="root"></div>')) {
+    throw new Error("root placeholder not found in " + rel);
+  }
+  html = html.replace('<div id="root"></div>', `<div id="root">${appHtml}</div>`);
+  writeFileSync(indexPath, html);
+  console.log(`prerendered ${rel} (${appHtml.length} chars)`);
 }
-html = html.replace('<div id="root"></div>', `<div id="root">${appHtml}</div>`);
-writeFileSync(indexPath, html);
 rmSync(root + "/.prerender", { recursive: true, force: true });
-console.log(`Prerendered homepage: injected ${appHtml.length} chars`);

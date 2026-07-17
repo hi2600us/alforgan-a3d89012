@@ -18,6 +18,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: path.resolve(__dirname, "site/index.html"),
+        en: path.resolve(__dirname, "site/en/index.html"),
         recite: path.resolve(__dirname, "site/recite/index.html"),
         halaqat: path.resolve(__dirname, "site/halaqat-interest/index.html"),
       },

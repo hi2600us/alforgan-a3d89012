@@ -19,6 +19,8 @@ import {
   Sofa,
   BookOpenCheck,
   Mic,
+  Menu,
+  X,
 } from "lucide-react";
 
 const worksIcons = [
@@ -228,8 +230,8 @@ const t = {
   },
 };
 
-export default function Home() {
-  const [lang, setLang] = useState<Lang>("ar");
+export default function Home({ lang = "ar" }: { lang?: Lang }) {
+  const [menuOpen, setMenuOpen] = useState(false);
   const L = t[lang];
   const isRtl = lang === "ar";
 
@@ -252,17 +254,10 @@ export default function Home() {
             <a href="#timeline" className="hover:text-[color:var(--emerald-deep)] transition">{isRtl ? "الجدول الزمني" : "Timeline"}</a>
             <a href="#partners" className="hover:text-[color:var(--emerald-deep)] transition">{isRtl ? "الشركاء" : "Partners"}</a>
             <a href="#trustee" className="hover:text-[color:var(--emerald-deep)] transition">{L.nav.trustee}</a>
-            <a href="/recite/" title="تلاوة تفاعلية" aria-label="تلاوة تفاعلية" className="hover:text-[color:var(--emerald-deep)] transition">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z" />
-                <path d="M19 10v2a7 7 0 0 1-14 0v-2" />
-                <line x1="12" x2="12" y1="19" y2="22" />
-              </svg>
-            </a>
           </div>
           <div className="flex items-center gap-3">
             <a
-              href="/halaqat-interest"
+              href="/halaqat-interest/"
               aria-label={isRtl ? "سجّل اهتمامك بحلقات تحفيظ القرآن" : "Register interest — Quran circles"}
               title={isRtl ? "سجّل اهتمامك بحلقات التحفيظ" : "Register interest — Quran circles"}
               className="hidden sm:inline-flex h-9 w-9 items-center justify-center rounded-md border border-border hover:border-[color:var(--gold)] hover:text-[color:var(--emerald-deep)] transition"
@@ -270,24 +265,65 @@ export default function Home() {
               <BookOpenCheck size={16} />
             </a>
             <a
-              href="/recite"
+              href="/recite/"
               aria-label={isRtl ? "اقرأ والبرنامج يستمع" : "Recite — the app listens"}
               title={isRtl ? "اقرأ والبرنامج يستمع ويصحّح" : "Recite — the app listens & corrects"}
               className="hidden sm:inline-flex h-9 w-9 items-center justify-center rounded-md border border-border hover:border-[color:var(--gold)] hover:text-[color:var(--emerald-deep)] transition"
             >
               <Mic size={16} />
             </a>
-            <button
-              onClick={() => setLang(lang === "ar" ? "en" : "ar")}
+            <a
+              href={isRtl ? "/en/" : "/"}
               className="text-xs font-medium tracking-wider uppercase px-3 py-2 rounded-md border border-border hover:border-[color:var(--gold)] transition"
             >
-              {lang === "ar" ? "EN" : "عربي"}
-            </button>
+              {isRtl ? "EN" : "عربي"}
+            </a>
             <a href="#donate" className="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-md text-sm font-medium text-[color:var(--ink)] shadow-[var(--shadow-gold)]" style={{ background: "var(--gradient-gold)" }}>
               {L.nav.donate}
             </a>
+            <button
+              onClick={() => setMenuOpen(!menuOpen)}
+              aria-label={isRtl ? (menuOpen ? "إغلاق القائمة" : "فتح القائمة") : (menuOpen ? "Close menu" : "Open menu")}
+              aria-expanded={menuOpen}
+              className="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-md border border-border hover:border-[color:var(--gold)] transition"
+            >
+              {menuOpen ? <X size={20} /> : <Menu size={20} />}
+            </button>
           </div>
         </nav>
+        {menuOpen && (
+          <div className="md:hidden border-t border-border/60 bg-background/95 backdrop-blur-md">
+            <div className="max-w-7xl mx-auto px-6 py-4 flex flex-col gap-1 text-sm">
+              {[
+                ["#about", L.nav.about],
+                ["#project", L.nav.project],
+                ["#works", L.nav.works],
+                ["#timeline", isRtl ? "الجدول الزمني" : "Timeline"],
+                ["#partners", isRtl ? "الشركاء" : "Partners"],
+                ["#trustee", L.nav.trustee],
+                ["/halaqat-interest/", isRtl ? "حلقات التحفيظ — سجّل اهتمامك" : "Quran circles — register interest"],
+                ["/recite/", isRtl ? "تلاوة تفاعلية" : "Interactive recitation"],
+              ].map(([href, label]) => (
+                <a
+                  key={href}
+                  href={href}
+                  onClick={() => setMenuOpen(false)}
+                  className="py-2.5 px-2 rounded-md hover:bg-muted hover:text-[color:var(--emerald-deep)] transition"
+                >
+                  {label}
+                </a>
+              ))}
+              <a
+                href="#donate"
+                onClick={() => setMenuOpen(false)}
+                className="mt-2 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-md text-sm font-medium text-[color:var(--ink)] shadow-[var(--shadow-gold)]"
+                style={{ background: "var(--gradient-gold)" }}
+              >
+                {L.nav.donate}
+              </a>
+            </div>
+          </div>
+        )}
       </header>
 
       {/* HERO */}
