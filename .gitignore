@@ -31,5 +31,7 @@ dist-ssr
 *.sln
 *.sw?
 
-# npm lockfile (repo uses bun.lock)
-package-lock.json
+
+# build output (built in CI)
+dist
+.prerender
