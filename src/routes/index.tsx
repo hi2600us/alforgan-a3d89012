@@ -261,6 +261,7 @@ function Index() {
             </div>
           </a>
           <div className="hidden md:flex items-center gap-8 text-sm">
+            <a href="/recite/" className="hover:text-[color:var(--emerald-deep)] transition">{isRtl ? "تلاوة تفاعلية" : "Recite"}</a>
             <a href="#about" className="hover:text-[color:var(--emerald-deep)] transition">{L.nav.about}</a>
             <a href="#project" className="hover:text-[color:var(--emerald-deep)] transition">{L.nav.project}</a>
             <a href="#works" className="hover:text-[color:var(--emerald-deep)] transition">{L.nav.works}</a>
