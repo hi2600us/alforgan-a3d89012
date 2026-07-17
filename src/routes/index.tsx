@@ -747,6 +747,10 @@ function Index() {
             <span>{L.permitNo}: {L.permitPending}</span>
           </div>
         </div>
+        <div className="max-w-7xl mx-auto px-6 lg:px-10 mt-6 pt-6 border-t border-border/60 text-center text-xs text-muted-foreground leading-relaxed">
+          <p>موقع alforgan.org مملوك ومُشغَّل من قِبل: وقف الفرقان الخيري ودار النسائية لتحفيظ القران — منظمة غير ربحية مسجلة، رقم التسجيل: 1112506318 — عفراء، بلقرن، المملكة العربية السعودية</p>
+          <p className="mt-1" dir="ltr">alforgan.org is owned and operated by Waqf Al-Furqan Charitable Endowment &amp; Women's Quran Memorization House — a registered nonprofit organization, Registration ID: 1112506318 — Afra, Balqarn, Saudi Arabia.</p>
+        </div>
       </footer>
     </div>
   );
