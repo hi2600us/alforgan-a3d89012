@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>اقرأ · والبرنامج يستمع ويصحّح | وقف الفرقان</title>
+<meta name="description" content="برنامج تفاعلي: اختر السورة والآية أو السورة كاملة، اقرأ بصوتك، والبرنامج يستمع لك وإن أخطأت أوقفك وصحّح لك.">
+<meta property="og:title" content="اقرأ · والبرنامج يستمع">
+<meta property="og:description" content="تدرَّب على التلاوة والتصحيح الفوري.">
+<link rel="canonical" href="https://alforgan.org/recite/">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/styles.css">
+<style>
+  .seg-active{background:var(--emerald-deep);color:var(--sand)}
+  .chip-active{border-color:var(--gold)!important;background:var(--sand);color:var(--emerald-deep)}
+  .word-ok{color:oklch(0.45 0.12 160);font-weight:700}
+  .word-bad{color:oklch(0.5 0.2 25);font-weight:700;text-decoration:underline wavy}
+</style>
+</head>
+<body>
+<div class="min-h-screen bg-background text-foreground">
+  <header class="border-b border-border/60 bg-background/80 backdrop-blur-md sticky top-0 z-40">
+    <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-3">
+        <img src="/logo.png" alt="وقف الفرقان" class="h-8 w-auto">
+        <span class="font-display text-lg text-[color:var(--emerald-deep)]">وقف الفرقان</span>
+      </a>
+      <a href="/" class="text-sm text-muted-foreground hover:text-[color:var(--emerald-deep)]">← الرئيسية</a>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-6 py-10 md:py-14">
+    <p class="text-[10px] tracking-[0.3em] uppercase text-[color:var(--gold)]">تلاوة تفاعلية</p>
+    <h1 class="font-display text-3xl md:text-5xl text-[color:var(--emerald-deep)] mt-3 leading-tight">اقرأ … والبرنامج يستمع ويصحّح</h1>
+    <p class="mt-4 text-base text-foreground/80 leading-relaxed max-w-2xl">
+      اختر السورة والآية أو السورة كاملة، ثم اضغط «ابدأ الاستماع» واقرأ بصوتٍ واضح. عند أول خطأ
+      سيوقفك البرنامج ويعيد التلاوة الصحيحة بصوت القارئ الذي اخترته.
+    </p>
+
+    <div class="mt-8 grid md:grid-cols-2 gap-4">
+      <div class="rounded-xl border border-border bg-card p-4">
+        <div class="text-xs uppercase tracking-widest text-muted-foreground mb-2">وضع القراءة</div>
+        <div class="inline-flex rounded-md border border-border overflow-hidden">
+          <button id="mode-ayah" class="px-4 py-2 text-sm seg-active">آية واحدة</button>
+          <button id="mode-surah" class="px-4 py-2 text-sm bg-background">سورة كاملة</button>
+        </div>
+      </div>
+      <div class="rounded-xl border border-border bg-card p-4">
+        <div class="text-xs uppercase tracking-widest text-muted-foreground mb-2">القارئ</div>
+        <div id="reciters" class="flex flex-wrap gap-2"></div>
+      </div>
+    </div>
+
+    <div class="mt-4 grid gap-4 rounded-xl border border-border bg-card p-5 md:grid-cols-3" id="pickers">
+      <div class="grid gap-2">
+        <label class="text-xs uppercase tracking-widest text-muted-foreground">السورة</label>
+        <select id="surah" class="rounded-md border border-border bg-background px-3 py-2.5 text-sm"></select>
+      </div>
+      <div class="grid gap-2" id="ayah-wrap">
+        <label class="text-xs uppercase tracking-widest text-muted-foreground">رقم الآية <span id="ayah-max" class="text-muted-foreground/70"></span></label>
+        <input id="ayah" type="number" min="1" value="1" dir="ltr" class="rounded-md border border-border bg-background px-3 py-2.5 text-sm">
+      </div>
+      <div class="grid gap-2">
+        <label class="text-xs uppercase tracking-widest text-muted-foreground">استماع</label>
+        <button id="play" class="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-md border border-border text-sm hover:border-[color:var(--gold)] disabled:opacity-50">▶ <span id="play-label">استمع للآية</span></button>
+      </div>
+    </div>
+
+    <div id="text-box" class="mt-6 rounded-xl border border-[color:var(--gold)]/30 bg-[color:var(--sand)] p-6 md:p-8 min-h-[140px]">
+      <p id="target" class="font-arabic text-2xl md:text-3xl leading-loose text-[color:var(--emerald-deep)]" style="font-family:Amiri,serif"><span class="text-muted-foreground text-sm">جارٍ التحميل…</span></p>
+    </div>
+
+    <div class="mt-6 flex flex-wrap items-center gap-3">
+      <button id="listen" class="inline-flex items-center gap-2 px-6 py-3 rounded-md text-sm font-medium text-[color:var(--ink)] shadow-[var(--shadow-gold)]" style="background:var(--gradient-gold)">🎙 ابدأ الاستماع</button>
+      <button id="stop" class="hidden inline-flex items-center gap-2 px-6 py-3 rounded-md text-sm font-medium border border-border hover:border-[color:var(--gold)]">■ أوقف الاستماع</button>
+      <button id="reset" class="inline-flex items-center gap-2 px-4 py-3 rounded-md text-sm border border-border hover:border-[color:var(--gold)]">↺ إعادة</button>
+      <span id="status" class="text-sm text-muted-foreground"></span>
+    </div>
+
+    <div class="mt-6 rounded-xl border border-border bg-card p-5">
+      <div class="text-xs uppercase tracking-widest text-muted-foreground mb-2">ما سمعه البرنامج</div>
+      <p id="transcript" class="text-base leading-relaxed min-h-[28px] text-foreground/80">—</p>
+    </div>
+
+    <p class="mt-8 text-xs text-muted-foreground leading-relaxed">
+      ملاحظة: يعتمد التعرّف على الصوت على تقنية المتصفح (يعمل بشكل أفضل في Chrome)، وقد لا يميّز التلاوة المجوّدة
+      بدقة تامة. النص القرآني والتلاوات من alquran.cloud و islamic.network.
+    </p>
+  </main>
+</div>
+
+<script>
+(function () {
+  "use strict";
+  var RECITERS = [
+    { id: "ar.alafasy", name: "مشاري العفاسي" },
+    { id: "ar.abdurrahmaansudais", name: "عبدالرحمن السديس" },
+    { id: "ar.husary", name: "محمود خليل الحصري" },
+  ];
+  var state = {
+    surahs: [], surahNo: 1, ayahNo: 1, mode: "ayah", reciterId: RECITERS[0].id,
+    ayah: null, surahText: "", loading: false,
+    transcript: "", listening: false, status: "idle", mistakeAt: null,
+  };
+  var rec = null, audio = null, micStream = null, loadSeq = 0;
+
+  var $ = function (id) { return document.getElementById(id); };
+
+  function normalize(input) {
+    return input
+      .replace(/[\u0610-\u061A\u064B-\u065F\u0670\u06D6-\u06ED\u08D3-\u08FF]/g, "")
+      .replace(/\u0640/g, "")
+      .replace(/[\u0622\u0623\u0625\u0671\u0672\u0673]/g, "\u0627")
+      .replace(/\u0649/g, "\u064A")
+      .replace(/\u0629/g, "\u0647")
+      .replace(/[\u0624\u0626]/g, "")
+      .replace(/\u0621/g, "")
+      .replace(/[^\u0600-\u06FF\s]/g, " ")
+      .replace(/\s+/g, " ")
+      .trim();
+  }
+  function tokens(s) { var n = normalize(s); return n ? n.split(" ") : []; }
+
+  function targetText() { return state.mode === "ayah" ? (state.ayah ? state.ayah.text : "") : state.surahText; }
+  function surahAudioUrl() { return "https://cdn.islamic.network/quran/audio-surah/128/" + state.reciterId + "/" + state.surahNo + ".mp3"; }
+
+  function setStatus(msg, cls) {
+    var el = $("status");
+    el.textContent = msg || "";
+    el.className = "text-sm " + (cls || "text-muted-foreground");
+  }
+
+  function renderText() {
+    var el = $("target");
+    if (state.loading) { el.innerHTML = '<span class="text-muted-foreground text-sm">جارٍ التحميل…</span>'; return; }
+    var text = targetText();
+    if (!text) { el.innerHTML = '<span class="text-muted-foreground text-sm">لا يوجد نص.</span>'; return; }
+    var words = text.split(/\s+/);
+    var spoken = tokens(state.transcript);
+    var exp = tokens(text);
+    var okCount = 0;
+    for (var i = 0; i < spoken.length && i < exp.length; i++) {
+      if (spoken[i] === exp[i]) okCount++; else break;
+    }
+    el.innerHTML = words.map(function (w, i) {
+      var cls = "";
+      if (state.mistakeAt !== null && i === state.mistakeAt) cls = "word-bad";
+      else if (i < okCount) cls = "word-ok";
+      return '<span class="' + cls + '">' + w + "</span>";
+    }).join(" ");
+  }
+
+  function renderControls() {
+    $("mode-ayah").className = "px-4 py-2 text-sm " + (state.mode === "ayah" ? "seg-active" : "bg-background");
+    $("mode-surah").className = "px-4 py-2 text-sm " + (state.mode === "surah" ? "seg-active" : "bg-background");
+    $("ayah-wrap").style.display = state.mode === "ayah" ? "" : "none";
+    $("pickers").className = "mt-4 grid gap-4 rounded-xl border border-border bg-card p-5 " + (state.mode === "ayah" ? "md:grid-cols-3" : "md:grid-cols-2");
+    $("play-label").textContent = state.mode === "ayah" ? "استمع للآية" : "استمع للسورة";
+    $("text-box").className = "mt-6 rounded-xl border border-[color:var(--gold)]/30 bg-[color:var(--sand)] p-6 md:p-8 min-h-[140px]" + (state.mode === "surah" ? " max-h-[420px] overflow-y-auto" : "");
+    $("listen").classList.toggle("hidden", state.listening);
+    $("stop").classList.toggle("hidden", !state.listening);
+    var chips = $("reciters").children;
+    for (var i = 0; i < chips.length; i++) {
+      chips[i].className = "px-3 py-1.5 text-sm rounded-md border " + (chips[i].dataset.id === state.reciterId ? "chip-active border-[color:var(--gold)]" : "border-border hover:border-[color:var(--gold)]/60");
+    }
+    $("transcript").textContent = state.transcript.trim() || "—";
+  }
+
+  function stopListening() { try { if (rec) rec.stop(); } catch (e) {} state.listening = false; renderControls(); }
+  function releaseMic() { if (micStream) { micStream.getTracks().forEach(function (t) { t.stop(); }); micStream = null; } }
+  function stopAudio() { if (audio) { audio.pause(); audio.currentTime = 0; } }
+  function playCorrection() {
+    var src = state.mode === "ayah" ? (state.ayah && state.ayah.audio) : surahAudioUrl();
+    if (!src) return;
+    if (!audio) audio = new Audio();
+    audio.src = src;
+    audio.play().catch(function () {});
+  }
+
+  function loadContent() {
+    var seq = ++loadSeq;
+    state.loading = true; state.transcript = ""; state.status = "idle"; state.mistakeAt = null;
+    setStatus(""); renderText(); renderControls();
+    var done = function () { if (seq === loadSeq) { state.loading = false; renderText(); } };
+    if (state.mode === "ayah") {
+      fetch("https://api.alquran.cloud/v1/ayah/" + state.surahNo + ":" + state.ayahNo + "/editions/quran-uthmani," + state.reciterId)
+        .then(function (r) { return r.json(); })
+        .then(function (j) {
+          if (seq !== loadSeq) return;
+          var arr = (j && j.data) || [];
+          var text = null, aud = null;
+          for (var i = 0; i < arr.length; i++) {
+            if (arr[i].edition.identifier === "quran-uthmani") text = arr[i];
+            else if (arr[i].edition.identifier === state.reciterId) aud = arr[i];
+          }
+          state.ayah = { text: (text && text.text) || "", audio: (aud && aud.audio) || "" };
+        })
+        .catch(function () { if (seq === loadSeq) setStatus("تعذّر تحميل النص.", "text-red-700"); })
+        .finally(done);
+    } else {
+      fetch("https://api.alquran.cloud/v1/surah/" + state.surahNo + "/quran-uthmani")
+        .then(function (r) { return r.json(); })
+        .then(function (j) {
+          if (seq !== loadSeq) return;
+          var ayahs = (j && j.data && j.data.ayahs) || [];
+          state.surahText = ayahs.map(function (a) { return a.text; }).join(" ");
+        })
+        .catch(function () { if (seq === loadSeq) setStatus("تعذّر تحميل النص.", "text-red-700"); })
+        .finally(done);
+    }
+  }
+
+  function startListening() {
+    var SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (!SR) { setStatus("متصفحك لا يدعم التعرّف على الصوت. جرّب Chrome على الحاسوب أو الأندرويد.", "text-red-700"); return; }
+    var text = targetText();
+    if (!text) return;
+    if (!(navigator.mediaDevices && navigator.mediaDevices.getUserMedia)) { setStatus("لا يمكن الوصول للميكروفون في هذا المتصفح.", "text-red-700"); return; }
+    navigator.mediaDevices.getUserMedia({ audio: true }).then(function (stream) {
+      micStream = stream;
+      state.transcript = ""; state.mistakeAt = null; state.status = "listening";
+      setStatus("يستمع الآن… اقرأ بصوت واضح", "text-[color:var(--emerald-deep)]");
+      rec = new SR();
+      rec.lang = "ar-SA"; rec.continuous = true; rec.interimResults = true;
+      rec.onresult = function (e) {
+        var full = "";
+        for (var i = 0; i < e.results.length; i++) full += e.results[i][0].transcript + " ";
+        state.transcript = full;
+        var spoken = tokens(full), exp = tokens(text), mistake = null;
+        for (var k = 0; k < spoken.length && k < exp.length; k++) {
+          if (spoken[k] !== exp[k]) { mistake = k; break; }
+        }
+        if (mistake !== null) {
+          state.mistakeAt = mistake; state.status = "mistake";
+          setStatus("توقف — يوجد خطأ. استمع للتلاوة الصحيحة.", "text-red-700");
+          stopListening(); releaseMic();
+          setTimeout(playCorrection, 250);
+        } else if (spoken.length >= exp.length && exp.length > 0) {
+          state.status = "done";
+          setStatus("أحسنت! تلاوة صحيحة ✓", "text-[color:var(--emerald-deep)]");
+          stopListening(); releaseMic();
+        }
+        renderText(); renderControls();
+      };
+      rec.onerror = function (e) {
+        if (e.error === "audio-capture") setStatus("تعذّر التقاط الصوت من الميكروفون.", "text-red-700");
+        else if (e.error === "not-allowed") setStatus("لم يتم السماح باستخدام الميكروفون.", "text-red-700");
+        else if (e.error === "network") setStatus("خطأ في الشبكة أثناء التعرّف.", "text-red-700");
+        else if (e.error !== "aborted" && e.error !== "no-speech") setStatus("خطأ في التعرّف: " + e.error, "text-red-700");
+        state.listening = false; releaseMic(); renderControls();
+      };
+      rec.onend = function () { state.listening = false; renderControls(); };
+      try { rec.start(); state.listening = true; renderControls(); }
+      catch (e) { setStatus("تعذّر بدء الاستماع.", "text-red-700"); releaseMic(); }
+    }).catch(function (err) {
+      var name = (err && err.name) || "";
+      if (name === "NotAllowedError" || name === "SecurityError")
+        setStatus("لم يتم السماح باستخدام الميكروفون. اضغط أيقونة القفل 🔒 بجوار العنوان واختر «السماح»، ثم أعد المحاولة.", "text-red-700");
+      else if (name === "NotFoundError") setStatus("لم يتم العثور على ميكروفون متصل بالجهاز.", "text-red-700");
+      else if (name === "NotReadableError") setStatus("الميكروفون قيد الاستخدام بواسطة تطبيق آخر.", "text-red-700");
+      else setStatus("تعذّر تشغيل الميكروفون: " + (name || "خطأ غير معروف"), "text-red-700");
+    });
+  }
+
+  function reset() {
+    stopListening(); releaseMic(); stopAudio();
+    state.transcript = ""; state.mistakeAt = null; state.status = "idle";
+    setStatus(""); renderText(); renderControls();
+  }
+
+  // ---- wire up ----
+  RECITERS.forEach(function (r) {
+    var b = document.createElement("button");
+    b.textContent = r.name; b.dataset.id = r.id;
+    b.addEventListener("click", function () { state.reciterId = r.id; renderControls(); loadContent(); });
+    $("reciters").appendChild(b);
+  });
+  $("mode-ayah").addEventListener("click", function () { state.mode = "ayah"; renderControls(); loadContent(); });
+  $("mode-surah").addEventListener("click", function () { state.mode = "surah"; renderControls(); loadContent(); });
+  $("surah").addEventListener("change", function () { state.surahNo = Number(this.value); syncAyahMax(); state.ayahNo = 1; $("ayah").value = 1; loadContent(); });
+  $("ayah").addEventListener("change", function () { state.ayahNo = Math.max(1, Number(this.value) || 1); this.value = state.ayahNo; loadContent(); });
+  $("play").addEventListener("click", playCorrection);
+  $("listen").addEventListener("click", startListening);
+  $("stop").addEventListener("click", function () { stopListening(); releaseMic(); setStatus(""); });
+  $("reset").addEventListener("click", reset);
+
+  function syncAyahMax() {
+    var s = state.surahs.find(function (x) { return x.number === state.surahNo; });
+    if (s) { $("ayah").max = s.numberOfAyahs; $("ayah-max").textContent = "(1 - " + s.numberOfAyahs + ")"; }
+  }
+
+  fetch("https://api.alquran.cloud/v1/surah")
+    .then(function (r) { return r.json(); })
+    .then(function (j) {
+      state.surahs = (j && j.data) || [];
+      var sel = $("surah");
+      state.surahs.forEach(function (s) {
+        var o = document.createElement("option");
+        o.value = s.number; o.textContent = s.number + ". " + s.name + " — " + s.englishName;
+        sel.appendChild(o);
+      });
+      syncAyahMax();
+    })
+    .catch(function () { setStatus("تعذّر تحميل قائمة السور.", "text-red-700"); });
+
+  renderControls();
+  loadContent();
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>سجّل اهتمامك · حلقات تحفيظ القرآن · وقف الفرقان</title>
+<meta name="description" content="سجّل اهتمامك بالانضمام إلى حلقات تحفيظ القرآن الكريم القادمة في وقف الفرقان ببلقرن.">
+<link rel="canonical" href="https://alforgan.org/halaqat-interest/">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="/assets/styles.css">
+</head>
+<body>
+<div class="min-h-screen bg-background text-foreground">
+  <header class="border-b border-border/60 bg-background/80 backdrop-blur-md sticky top-0 z-40">
+    <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-3">
+        <img src="/logo.png" alt="وقف الفرقان" class="h-8 w-auto">
+        <span class="font-display text-lg text-[color:var(--emerald-deep)]">وقف الفرقان</span>
+      </a>
+      <a href="/" class="text-sm text-muted-foreground hover:text-[color:var(--emerald-deep)]">← الرئيسية</a>
+    </div>
+  </header>
+
+  <main class="max-w-2xl mx-auto px-6 py-10 md:py-14">
+    <p class="text-[10px] tracking-[0.3em] uppercase text-[color:var(--gold)]">حلقات التحفيظ</p>
+    <h1 class="font-display text-3xl md:text-5xl text-[color:var(--emerald-deep)] mt-3 leading-tight">سجّل اهتمامك بحلقات تحفيظ القرآن</h1>
+    <p class="mt-4 text-base text-foreground/80 leading-relaxed">
+      نستعد لافتتاح حلقات تحفيظ القرآن الكريم للنساء والأطفال في مقر وقف الفرقان بمدينة عفراء
+      ببلقرن. سجّل بياناتك ليصلك إشعار بموعد بدء التسجيل وطرق الالتحاق.
+    </p>
+
+    <div id="success" class="hidden mt-10 rounded-xl border border-[color:var(--emerald-deep)]/30 bg-[color:var(--sand)] p-8 text-center">
+      <div class="text-3xl">✓</div>
+      <h2 class="mt-3 font-display text-2xl text-[color:var(--emerald-deep)]">تم استلام تسجيلك، جزاك الله خيراً</h2>
+      <p class="mt-2 text-sm text-foreground/70">سنتواصل معك بالتفاصيل قريباً بإذن الله.</p>
+      <button id="again" class="mt-6 px-5 py-2 rounded-md border border-border text-sm hover:border-[color:var(--gold)]">تسجيل آخر</button>
+    </div>
+
+    <form id="form" class="mt-10 grid gap-5 rounded-xl border border-border bg-card p-6 md:p-8">
+      <input type="hidden" name="_subject" value="تسجيل اهتمام - حلقات تحفيظ القرآن">
+      <input type="hidden" name="_template" value="table">
+      <input type="hidden" name="_captcha" value="false">
+      <p hidden><label>Do not fill this out: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+
+      <div class="grid gap-2">
+        <label for="name" class="text-sm font-medium text-[color:var(--emerald-deep)]">الاسم الكامل <span class="text-[color:var(--gold)]">*</span></label>
+        <input id="name" name="name" type="text" required maxlength="255" class="rounded-md border border-border bg-background px-3 py-2.5 text-sm focus:outline-none focus:border-[color:var(--gold)]">
+      </div>
+      <div class="grid gap-2">
+        <label for="email" class="text-sm font-medium text-[color:var(--emerald-deep)]">البريد الإلكتروني <span class="text-[color:var(--gold)]">*</span></label>
+        <input id="email" name="email" type="email" required maxlength="255" class="rounded-md border border-border bg-background px-3 py-2.5 text-sm focus:outline-none focus:border-[color:var(--gold)]">
+      </div>
+      <div class="grid gap-2">
+        <label for="phone" class="text-sm font-medium text-[color:var(--emerald-deep)]">رقم الجوال <span class="text-[color:var(--gold)]">*</span></label>
+        <input id="phone" name="phone" type="tel" required dir="ltr" placeholder="+9665xxxxxxxx" maxlength="255" class="rounded-md border border-border bg-background px-3 py-2.5 text-sm focus:outline-none focus:border-[color:var(--gold)]">
+      </div>
+      <div class="grid gap-2">
+        <label for="city" class="text-sm font-medium text-[color:var(--emerald-deep)]">المدينة / الحي</label>
+        <input id="city" name="city" type="text" maxlength="255" class="rounded-md border border-border bg-background px-3 py-2.5 text-sm focus:outline-none focus:border-[color:var(--gold)]">
+      </div>
+      <div class="grid gap-2">
+        <label for="track" class="text-sm font-medium text-[color:var(--emerald-deep)]">نوع الحلقة</label>
+        <select id="track" name="track" required class="rounded-md border border-border bg-background px-3 py-2.5 text-sm focus:outline-none focus:border-[color:var(--gold)]">
+          <option value="">— اختر —</option>
+          <option value="child">حلقة أطفال</option>
+          <option value="adult">حلقة كبار</option>
+          <option value="women">حلقة نساء</option>
+        </select>
+      </div>
+      <div class="grid gap-2">
+        <label for="message" class="text-sm font-medium text-[color:var(--emerald-deep)]">ملاحظات (اختياري)</label>
+        <textarea id="message" name="message" rows="4" maxlength="1000" class="rounded-md border border-border bg-background px-3 py-2.5 text-sm focus:outline-none focus:border-[color:var(--gold)]"></textarea>
+      </div>
+
+      <p id="error" class="hidden text-sm text-red-600">تعذّر إرسال النموذج. حاول مرة أخرى.</p>
+
+      <button id="submit" type="submit" class="mt-2 inline-flex items-center justify-center px-6 py-3 rounded-md font-medium text-[color:var(--ink)] shadow-[var(--shadow-gold)] disabled:opacity-60" style="background:var(--gradient-gold)">أرسل التسجيل</button>
+      <p class="text-xs text-muted-foreground text-center">بياناتك محفوظة ولن تُستخدم إلا للتواصل بخصوص حلقات التحفيظ.</p>
+    </form>
+  </main>
+</div>
+
+<script>
+(function () {
+  "use strict";
+  var form = document.getElementById("form");
+  var success = document.getElementById("success");
+  var error = document.getElementById("error");
+  var submit = document.getElementById("submit");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    var data = {};
+    new FormData(form).forEach(function (v, k) { data[k] = typeof v === "string" ? v : ""; });
+    if (data["bot-field"]) { form.classList.add("hidden"); success.classList.remove("hidden"); return; }
+    error.classList.add("hidden");
+    submit.disabled = true;
+    submit.textContent = "جارٍ الإرسال…";
+    fetch("https://formsubmit.co/ajax/admin@alforgan.org", {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "Accept": "application/json" },
+      body: JSON.stringify(data),
+    }).then(function (r) {
+      if (!r.ok) throw new Error("HTTP " + r.status);
+      form.reset();
+      form.classList.add("hidden");
+      success.classList.remove("hidden");
+    }).catch(function () {
+      error.classList.remove("hidden");
+    }).finally(function () {
+      submit.disabled = false;
+      submit.textContent = "أرسل التسجيل";
+    });
+  });
+
+  document.getElementById("again").addEventListener("click", function () {
+    success.classList.add("hidden");
+    form.classList.remove("hidden");
+  });
+})();
+</script>
+</body>
+</html>

@@ -2,26 +2,23 @@
 
 Website of وقف الفرقان الخيري ودار النسائية لتحفيظ القران (Alforgan Charitable Endowment), Balqarn, Saudi Arabia.
 
-## Architecture
+## How it works
 
-Plain Vite + React static multi-page app. No server, no framework runtime.
+Plain static HTML — no build step, no dependencies. What's in this repo is exactly what's served.
 
-- `site/index.html` + `site/home/` — homepage (prerendered at build time for SEO, hydrates on load)
-- `site/recite/` — interactive Quran recitation practice page
-- `site/halaqat-interest/` — Quran circles interest registration form (emails admin@alforgan.org via FormSubmit)
-- `site/styles.css` — Tailwind 4 theme (design tokens in CSS variables)
-- `site/public/` — static files copied to site root (logo, favicon, CNAME, robots.txt, sitemap.xml, 404.html, og-image)
-- `scripts/prerender.mjs` — renders the homepage HTML into `dist/index.html` after the client build
+| File / folder | What it is |
+|---|---|
+| `index.html` | Homepage (Arabic) |
+| `en/index.html` | Homepage (English) |
+| `recite/index.html` | Interactive Quran recitation practice (speech recognition, self-contained) |
+| `halaqat-interest/index.html` | Quran circles registration form (emails admin@alforgan.org via FormSubmit) |
+| `404.html` | Not-found page |
+| `assets/` | Compiled stylesheet + photos |
+| `logo.png`, `favicon.png`, `og-image.jpg` | Brand images |
+| `CNAME`, `robots.txt`, `sitemap.xml` | Domain + search engine config |
 
-## Develop
+## Editing
 
-```bash
-npm install
-npm run dev      # local dev server
-npm run build    # full production build -> dist/
-npm run preview  # preview the production build
-```
+Edit the HTML files directly and push to `main` — GitHub Actions deploys the repo as-is to GitHub Pages (custom domain: alforgan.org).
 
-## Deploy
-
-Push to `main`. GitHub Actions builds from source and deploys `dist/` to GitHub Pages (custom domain: alforgan.org, configured via `site/public/CNAME`).
+Styling uses utility classes compiled into `assets/styles.css`. When adding new elements, reuse classes already present in the HTML; for anything new, add plain CSS to a `<style>` block or to the end of `assets/styles.css`.
