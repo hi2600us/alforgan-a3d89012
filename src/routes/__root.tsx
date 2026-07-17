@@ -60,7 +60,7 @@ function NotFoundComponent() {
           </Link>
         </div>
         <p className="mt-10 text-xs uppercase tracking-[0.25em] text-muted-foreground/70">
-          وقف الفرقان · Al-Furqan Endowment
+          وقف الفرقان · Alforgan Endowment
         </p>
       </div>
     </div>
@@ -110,15 +110,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "وقف الفرقان | Al-Furqan Endowment" },
+      { title: "وقف الفرقان | Alforgan Endowment" },
       { name: "description", content: "وقف خيري لدعم تحفيظ القرآن الكريم ورعاية المساجد في بلقرن. A charitable endowment supporting Quran memorization and mosques in Balqarn, Saudi Arabia." },
-      { name: "author", content: "Al-Furqan Endowment" },
-      { property: "og:title", content: "وقف الفرقان | Al-Furqan Endowment" },
+      { name: "author", content: "Alforgan Endowment" },
+      { property: "og:title", content: "وقف الفرقان | Alforgan Endowment" },
       { property: "og:description", content: "وقف خيري لدعم تحفيظ القرآن الكريم ورعاية المساجد في بلقرن. A charitable endowment supporting Quran memorization and mosques in Balqarn, Saudi Arabia." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
-      { name: "twitter:title", content: "وقف الفرقان | Al-Furqan Endowment" },
+      { name: "twitter:title", content: "وقف الفرقان | Alforgan Endowment" },
       { name: "twitter:description", content: "وقف خيري لدعم تحفيظ القرآن الكريم ورعاية المساجد في بلقرن. A charitable endowment supporting Quran memorization and mosques in Balqarn, Saudi Arabia." },
       { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/f9ae3860-7299-457f-932e-7f86101b4afe/id-preview-5e609b49--8d590bdb-fc79-410e-9f6b-2ab225eecc60.lovable.app-1782497619710.png" },
       { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/f9ae3860-7299-457f-932e-7f86101b4afe/id-preview-5e609b49--8d590bdb-fc79-410e-9f6b-2ab225eecc60.lovable.app-1782497619710.png" },

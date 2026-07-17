@@ -334,20 +334,6 @@ function Index() {
                   {L.learn}
                 </a>
               </div>
-              <div className="mt-12 pt-8 border-t border-white/10 grid grid-cols-3 gap-6 text-sm">
-                <div>
-                  <div className="text-[10px] uppercase tracking-widest text-[color:var(--gold-soft)]/70 mb-1">{L.certNo}</div>
-                  <div className="font-display text-lg text-[color:var(--sand)]" dir="ltr">1112506318</div>
-                </div>
-                <div>
-                  <div className="text-[10px] uppercase tracking-widest text-[color:var(--gold-soft)]/70 mb-1">{L.deedNo}</div>
-                  <div className="font-display text-lg text-[color:var(--sand)]" dir="ltr">361188322</div>
-                </div>
-                <div>
-                  <div className="text-[10px] uppercase tracking-widest text-[color:var(--gold-soft)]/70 mb-1">{L.naziraNo}</div>
-                  <div className="font-display text-lg text-[color:var(--sand)]" dir="ltr">47312974 51</div>
-                </div>
-              </div>
             </div>
 
             <div className="lg:col-span-6 relative">
@@ -403,13 +389,6 @@ function Index() {
               </div>
             </div>
 
-            <dl className="mt-10 grid sm:grid-cols-2 gap-5 text-sm">
-              <DetailRow label={L.certNo} value="1112506318" />
-              <DetailRow label={L.deedNo} value="361188322" />
-              <DetailRow label={L.deedDate} value="20 / 06 / 1436 AH" />
-              <DetailRow label={L.naziraNo} value="47312974 51 · 26/02/1447 AH" />
-              <DetailRow label={L.permitNo} value={L.permitPending} />
-            </dl>
           </div>
         </div>
       </section>
@@ -749,7 +728,7 @@ function Index() {
         </div>
         <div className="max-w-7xl mx-auto px-6 lg:px-10 mt-6 pt-6 border-t border-border/60 text-center text-xs text-muted-foreground leading-relaxed">
           <p>موقع alforgan.org مملوك ومُشغَّل من قِبل: وقف الفرقان الخيري ودار النسائية لتحفيظ القران — منظمة غير ربحية مسجلة، رقم التسجيل: 1112506318 — عفراء، بلقرن، المملكة العربية السعودية</p>
-          <p className="mt-1" dir="ltr">alforgan.org is owned and operated by Waqf Al-Furqan Charitable Endowment &amp; Women's Quran Memorization House — a registered nonprofit organization, Registration ID: 1112506318 — Afra, Balqarn, Saudi Arabia.</p>
+          <p className="mt-1" dir="ltr">alforgan.org is owned and operated by Waqf Alforgan Charitable Endowment &amp; Women's Quran Memorization House — a registered nonprofit organization, Registration ID: 1112506318 — Afra, Balqarn, Saudi Arabia.</p>
         </div>
       </footer>
     </div>
