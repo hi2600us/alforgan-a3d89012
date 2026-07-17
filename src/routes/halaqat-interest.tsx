@@ -13,11 +13,7 @@ export const Route = createFileRoute("/halaqat-interest")({
   component: HalaqatInterest,
 });
 
-function encode(data: Record<string, string>) {
-  return Object.keys(data)
-    .map((k) => encodeURIComponent(k) + "=" + encodeURIComponent(data[k]))
-    .join("&");
-}
+const FORM_ENDPOINT = "https://formsubmit.co/ajax/admin@alforgan.org";
 
 function HalaqatInterest() {
   const [status, setStatus] = useState<"idle" | "sending" | "ok" | "error">("idle");
@@ -27,7 +23,7 @@ function HalaqatInterest() {
     e.preventDefault();
     const form = e.currentTarget;
     const fd = new FormData(form);
-    const data: Record<string, string> = { "form-name": "contact" };
+    const data: Record<string, string> = {};
     fd.forEach((v, k) => {
       data[k] = typeof v === "string" ? v : "";
     });
@@ -38,10 +34,13 @@ function HalaqatInterest() {
     }
     setStatus("sending");
     try {
-      const res = await fetch("/", {
+      const res = await fetch(FORM_ENDPOINT, {
         method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: encode(data),
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(data),
       });
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       setStatus("ok");
@@ -90,15 +89,13 @@ function HalaqatInterest() {
           </div>
         ) : (
           <form
-            name="contact"
-            method="POST"
-            data-netlify="true"
-            data-netlify-honeypot="bot-field"
             onSubmit={onSubmit}
             className="mt-10 grid gap-5 rounded-xl border border-border bg-card p-6 md:p-8"
           >
-            {/* Required Netlify identifiers */}
-            <input type="hidden" name="form-name" value="contact" />
+            {/* FormSubmit configuration (sent as data, not rendered as visible fields) */}
+            <input type="hidden" name="_subject" value="تسجيل اهتمام - حلقات تحفيظ القرآن" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_captcha" value="false" />
             <p hidden>
               <label>
                 Do not fill this out: <input name="bot-field" tabIndex={-1} autoComplete="off" />
