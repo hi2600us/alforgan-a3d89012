@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /classic/
 
 Sitemap: https://alforgan.org/sitemap.xml
