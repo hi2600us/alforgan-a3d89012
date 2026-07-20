@@ -1,4 +1,21 @@
 /* ==========================================================================
+   Utility fallbacks
+   This site has no build step, so only utility classes already compiled
+   into assets/styles.css render. These few were used in the redesign but
+   were never part of that precompiled set — defined explicitly here,
+   matching the same --spacing:.25rem scale used throughout the site.
+   ========================================================================== */
+.h-1\.5 { height: 0.375rem; }
+.w-1\.5 { width: 0.375rem; }
+.mb-4 { margin-bottom: 1rem; }
+.mb-9 { margin-bottom: 2.25rem; }
+.pb-24 { padding-bottom: 6rem; }
+.p-7 { padding: 1.75rem; }
+@media (min-width: 1024px) {
+  .lg\:pb-32 { padding-bottom: 8rem; }
+}
+
+/* ==========================================================================
    Alforgan — Redesign Stylesheet
    Custom components layered on top of assets/styles.css (Tailwind tokens
    and CSS variables are reused via var(--token); these are hand-written
