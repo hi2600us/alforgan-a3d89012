@@ -21,7 +21,50 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="/assets/styles.css">
+<link rel="stylesheet" href="/assets/redesign-v3.css">
+<meta name="keywords" content="تصحيح التلاوة, تحفيظ القرآن, تلاوة تفاعلية, تعلم القرآن بالصوت, وقف الفرقان, مراجعة الحفظ">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://alforgan.org/recite/">
+<meta property="og:image" content="https://alforgan.org/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="اقرأ · والبرنامج يستمع ويصحّح">
+<meta name="twitter:description" content="أداة مجانية لمراجعة حفظ القرآن: اقرأ بصوتك والبرنامج يوقفك عند الخطأ ويصحّح.">
+<meta name="twitter:image" content="https://alforgan.org/og-image.jpg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "وقف الفرقان الخيري", "item": "https://alforgan.org/" },
+    { "@type": "ListItem", "position": 2, "name": "اقرأ والبرنامج يستمع ويصحّح", "item": "https://alforgan.org/recite/" }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "اقرأ … والبرنامج يستمع ويصحّح",
+  "url": "https://alforgan.org/recite/",
+  "applicationCategory": "EducationalApplication",
+  "operatingSystem": "Web browser",
+  "inLanguage": "ar",
+  "description": "أداة مجانية لمراجعة حفظ القرآن الكريم: اختر آية أو سورة، اقرأ بصوتك، وعند أول خطأ يوقفك البرنامج ويعيد التلاوة الصحيحة بصوت القارئ. تعمل داخل المتصفح دون تسجيل أو تثبيت.",
+  "isAccessibleForFree": true,
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "SAR" },
+  "publisher": {
+    "@type": "NGO",
+    "name": "وقف الفرقان الخيري ودار النسائية لتحفيظ القران",
+    "identifier": "1112506318",
+    "url": "https://alforgan.org/"
+  }
+}
+</script>
 <style>
+  /* utilities absent from the precompiled stylesheet (no build step) */
+  .mt-12{margin-top:3rem}
+  .min-h-\[28px\]{min-height:28px}
+  .hover\:underline:hover{text-decoration:underline}
   .seg-active{background:var(--emerald-deep);color:var(--sand)}
   .chip-active{border-color:var(--gold)!important;background:var(--sand);color:var(--emerald-deep)}
   .word-ok{color:oklch(0.45 0.12 160);font-weight:700}
@@ -97,7 +140,70 @@
       ملاحظة: يعتمد التعرّف على الصوت على تقنية المتصفح (يعمل بشكل أفضل في Chrome)، وقد لا يميّز التلاوة المجوّدة
       بدقة تامة. النص القرآني والتلاوات من alquran.cloud و islamic.network.
     </p>
+
+    <h2 class="font-display text-2xl text-[color:var(--emerald-deep)] mt-12">كيف تعمل الأداة؟</h2>
+    <p class="prose-body mt-3">الفكرة بسيطة: أنت تقرأ، والبرنامج يستمع. تختار السورة والآية — أو السورة كاملة — ثم تضغط «ابدأ الاستماع» وتقرأ بصوتٍ واضح. يقارن البرنامج ما سمعه بالنص القرآني كلمةً بكلمة، ويُظهر الكلمات الصحيحة بلون أخضر. وعند أول كلمة خاطئة يتوقف فوراً، ويشغّل تلاوة الآية بصوت القارئ الذي اخترته حتى تسمع الصواب وتعيد المحاولة.</p>
+    <p class="prose-body">الهدف ليس اختبارك، بل محاكاة أقرب ما يمكن لجلسة مراجعة مع معلّم: توقيف عند الخطأ، ثم تصحيح مسموع، ثم إعادة. وهي طريقة مفيدة تحديداً لمن يراجع حفظه وحده بين حلقة وأخرى.</p>
+
+    <h2 class="font-display text-2xl text-[color:var(--emerald-deep)] mt-10">لماذا نقدّم هذه الأداة؟</h2>
+    <p class="prose-body mt-3">هذه الأداة جزء من رسالة <a href="/" class="text-[color:var(--gold)] hover:underline">وقف الفرقان الخيري ودار النسائية لتحفيظ القرآن</a> — منظمة غير ربحية مسجلة (رقم التسجيل <span class="ltr-num">1112506318</span>) في مدينة عفراء بمحافظة بلقرن. رسالتنا تمكين تعليم القرآن الكريم وتحفيظه للنساء والأطفال، ودعم عمارة المساجد. ولأن الحلقات الحضورية لها موعد ومكان، أردنا أن يبقى بابٌ للمراجعة مفتوحاً في كل وقت ولكل أحد — مجاناً، دون تسجيل ودون تثبيت أي تطبيق.</p>
+    <p class="prose-body">الأداة <strong>مجانية بالكامل</strong> ولا تطلب أي بيانات شخصية. ولا يُرسل صوتك إلى أي خادم تابع لنا: التعرّف على الكلام يجري داخل متصفحك عبر تقنية <span class="ltr-num">Web Speech API</span> المدمجة فيه.</p>
+
+    <h2 class="font-display text-2xl text-[color:var(--emerald-deep)] mt-10">أسئلة شائعة</h2>
+    <div class="mt-4">
+      <details class="faq-item" open>
+        <summary>هل الأداة مجانية؟ وهل أحتاج حساباً؟</summary>
+        <p>نعم، مجانية بالكامل ولا تحتاج إلى إنشاء حساب أو تثبيت تطبيق. افتح الصفحة واقرأ.</p>
+      </details>
+      <details class="faq-item">
+        <summary>هل يُحفظ صوتي أو يُرسل إلى مكان ما؟</summary>
+        <p>لا نحفظ صوتك ولا نرسله إلى أي خادم تابع للوقف. يتولّى متصفحك عملية التعرّف على الكلام عبر خدمة الصوت المدمجة فيه، والنتيجة النصية تُقارن محلياً بالنص القرآني.</p>
+      </details>
+      <details class="faq-item">
+        <summary>أي متصفح يعمل بشكل أفضل؟</summary>
+        <p>تعتمد الأداة على واجهة التعرّف على الكلام في المتصفح، وهي الأفضل دعماً في Google Chrome على الحاسب وعلى أندرويد. قد لا تعمل في بعض المتصفحات الأخرى أو في وضع التصفح الخاص.</p>
+      </details>
+      <details class="faq-item">
+        <summary>لماذا لا يتعرّف البرنامج على تلاوتي أحياناً؟</summary>
+        <p>التعرّف الآلي على الكلام لم يُدرَّب على التلاوة المجوّدة والمدود الطويلة، لذا قد يُخطئ أحياناً في تمييز كلمة صحيحة. عدّ الأمر مساعداً للمراجعة لا حكماً نهائياً، وارجع دائماً إلى معلّم أو حلقة للإتقان.</p>
+      </details>
+      <details class="faq-item">
+        <summary>هل تُغني هذه الأداة عن الحلقة والمعلّم؟</summary>
+        <p>لا. هي أداة مراجعة ذاتية بين الحلقات. لتصحيح التلاوة وأحكام التجويد بشكل معتمد، ندعوك للانضمام إلى <a href="/halaqat-interest/">حلقات التحفيظ الحضورية</a> في مقر الوقف.</p>
+      </details>
+    </div>
+
+    <div class="card card--sand mt-10">
+      <div class="card__pattern"></div>
+      <div class="card__inner">
+        <h3 class="card__title" style="margin-top:0">تفضّل الحلقات الحضورية؟</h3>
+        <p class="card__text">نستعد لافتتاح حلقات تحفيظ القرآن الكريم للنساء والأطفال في مقر الوقف بعفراء. سجّل اهتمامك ليصلك إشعار بموعد بدء التسجيل.</p>
+        <a href="/halaqat-interest/" class="btn btn--gold btn--sm" style="margin-top:1rem">سجّل اهتمامك بالحلقات</a>
+      </div>
+    </div>
   </main>
+
+  <footer class="site-footer">
+    <div class="sec-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="/logo.png" alt="وقف الفرقان">
+          <div>
+            <div class="footer-brand__name">وقف الفرقان الخيري ودار النسائية لتحفيظ القرآن</div>
+            <div class="footer-brand__tag">منظمة غير ربحية مسجلة · عفراء، محافظة بلقرن، منطقة عسير، المملكة العربية السعودية</div>
+          </div>
+        </div>
+        <dl class="footer-meta">
+          <div><dt>رقم الشهادة الوقفية</dt><dd class="ltr-num">1112506318</dd></div>
+          <div><dt>تصريح جمع التبرعات</dt><dd>قيد الاستخراج</dd></div>
+        </dl>
+      </div>
+      <div class="footer-legal">
+        <p>موقع alforgan.org مملوك ومُشغَّل من قِبل: وقف الفرقان الخيري ودار النسائية لتحفيظ القران — منظمة غير ربحية مسجلة، رقم التسجيل: 1112506318 — عفراء، بلقرن، المملكة العربية السعودية</p>
+        <p class="footer-copy">© وقف الفرقان · جميع الحقوق محفوظة · <a href="/" class="hover:underline">الصفحة الرئيسية</a></p>
+      </div>
+    </div>
+  </footer>
 </div>
 
 <script>
