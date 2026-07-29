@@ -116,6 +116,16 @@
       form.reset();
       form.classList.add("hidden");
       success.classList.remove("hidden");
+      // GA4: registration lead. Fired only on a confirmed successful send,
+      // never on the submit attempt, so failures are not counted.
+      try {
+        if (typeof window.gtag === "function") {
+          window.gtag("event", "halaqat_interest_submit", {
+            form_name: "halaqat_interest",
+            language: document.documentElement.lang || "unknown"
+          });
+        }
+      } catch (e) { /* analytics must never break the form */ }
     }).catch(function () {
       error.classList.remove("hidden");
     }).finally(function () {
