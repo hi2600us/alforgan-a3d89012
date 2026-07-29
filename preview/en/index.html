@@ -34,7 +34,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap">
     <link rel="stylesheet" href="/assets/styles.css">
-    <link rel="stylesheet" href="/assets/redesign-v2.css">
+    <link rel="stylesheet" href="/assets/redesign-v3.css">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -196,15 +196,9 @@
       <!-- ============ 2. MISSION & ACTIVITIES ============ -->
       <section id="mission" class="sec">
         <div class="sec-inner">
-          <div class="split split--top">
+          <div class="mission-block mission-block--center">
             <div>
-              <div class="media">
-                <img src="/assets/quran-study.jpg" alt="Quran education and memorization for girls at the women's memorization house" loading="lazy" width="1024" height="1024">
-                <div class="media__caption">The Women's Quran Memorization House — the endowment's core activity</div>
-              </div>
-            </div>
-            <div>
-              <div class="sec-head">
+              <div class="sec-head sec-head--center">
                 <div class="section-kicker"><span class="line"></span><span>Who we are</span></div>
                 <h2 class="sec-head__title">Our Mission &amp; Activities</h2>
               </div>
@@ -217,7 +211,7 @@
               <p class="mission__status">Alforgan Charitable Endowment &amp; Women's Quran Memorization House is a <strong>registered nonprofit organization</strong>, officially registered with the General Authority of Awqaf in the Kingdom of Saudi Arabia, Registration ID <strong dir="ltr">1112506318</strong>, based in Afra, Balqarn Governorate, Asir Region.</p>
 
               <span class="sub-label">Our activities</span>
-              <div class="activities">
+              <div class="activities activities--four">
                 <div class="activity">
                   <span class="activity__icon"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 7v14"></path><path d="M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"></path></svg></span>
                   <div>
@@ -365,26 +359,26 @@
             </div>
           </div>
 
-          <div class="split split--even sec-body">
-            <div>
-              <div class="ba-wrap" data-ba-slider>
-                <img class="ba-after" src="/assets/furqan-building-clean.png" alt="Final rendering of the project once complete">
-                <div class="ba-before-clip">
-                  <img src="/assets/furqan-building-skeleton.png" alt="Actual on-site photo: current structural phase">
-                </div>
-                <span class="ba-label before-lbl">Now</span>
-                <span class="ba-label after-lbl">After completion</span>
-                <div class="ba-handle"><div class="ba-grip"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6-6 6 6 6"></path><path d="m15 6 6 6-6 6"></path></svg></div></div>
-                <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Drag to compare the site now with the final rendering">
+          <div class="compare sec-body">
+            <figure class="compare__item">
+              <span class="compare__tag compare__tag--now">The site today · Phase 2</span>
+              <div class="media">
+                <img src="/assets/furqan-building-skeleton.png" alt="Actual site photo: the concrete structure is complete and finishing works are underway" loading="lazy" width="1376" height="768">
               </div>
-              <p class="mt-3 text-xs text-muted-foreground text-center">Drag the handle to compare the site now with the final rendering</p>
-            </div>
-            <div>
-              <p class="prose-body">The photo shows the completed concrete structure — the foundation on which the finishing works now underway are being built, leading to the final envisioned result.</p>
-              <div class="mt-6 inline-flex items-center gap-3 px-5 py-3 rounded-full border border-[color:var(--gold)]/40 bg-card">
-                <span class="w-2 h-2 rounded-full bg-[color:var(--gold)] animate-pulse"></span>
-                <span class="text-sm text-[color:var(--emerald-deep)] font-display">Expected completion: one year</span>
+              <figcaption class="compare__caption">An actual photo from site: the concrete structure is fully complete, with facades and interior finishing works now in progress.</figcaption>
+            </figure>
+            <figure class="compare__item">
+              <span class="compare__tag compare__tag--after">After completion</span>
+              <div class="media media--contain media--render">
+                <img src="/assets/furqan-building-clean.png" alt="Final architectural rendering of the Alforgan Endowment building once complete" loading="lazy" width="662" height="610">
               </div>
+              <figcaption class="compare__caption">The final architectural rendering once finishing and fit-out are done — eleven work items stand between us and this.</figcaption>
+            </figure>
+          </div>
+          <div class="compare__note">
+            <div class="inline-flex items-center gap-3 px-5 py-3 rounded-full border border-[color:var(--gold)]/40 bg-card">
+              <span class="w-2 h-2 rounded-full bg-[color:var(--gold)] animate-pulse"></span>
+              <span class="text-sm text-[color:var(--emerald-deep)] font-display">Expected completion: one year</span>
             </div>
           </div>
         </div>
@@ -645,15 +639,26 @@
       </main>
 
       <!-- ============ FOOTER ============ -->
-      <footer class="py-12 border-t border-border">
-        <div class="max-w-7xl mx-auto px-6 lg:px-10 flex flex-col md:flex-row gap-6 items-center justify-between text-sm text-muted-foreground">
-          <div class="flex items-center gap-3"><img src="/logo.png" alt="Alforgan logo" class="h-8 w-auto"><span class="font-display text-base text-[color:var(--emerald-deep)]">Alforgan Charitable Endowment</span></div>
-          <div class="text-xs">© Alforgan Endowment · All rights reserved</div>
-          <div class="text-xs flex flex-col md:items-end gap-1"><span dir="ltr">Waqf Certificate No.: 1112506318</span><span>Fundraising Permit No.: Pending issuance</span></div>
-        </div>
-        <div class="max-w-7xl mx-auto px-6 lg:px-10 mt-6 pt-6 border-t border-border/60 text-center text-xs text-muted-foreground leading-relaxed">
-          <p>موقع alforgan.org مملوك ومُشغَّل من قِبل: وقف الفرقان الخيري ودار النسائية لتحفيظ القران — منظمة غير ربحية مسجلة، رقم التسجيل: 1112506318 — عفراء، بلقرن، المملكة العربية السعودية</p>
-          <p class="mt-1" dir="ltr">alforgan.org is owned and operated by Waqf Alforgan Charitable Endowment &amp; Women's Quran Memorization House — a registered nonprofit organization, Registration ID: 1112506318 — Afra, Balqarn, Saudi Arabia.</p>
+      <footer class="site-footer">
+        <div class="sec-inner">
+          <div class="footer-top">
+            <div class="footer-brand">
+              <img src="/logo.png" alt="Alforgan logo">
+              <div>
+                <div class="footer-brand__name">Alforgan Charitable Endowment &amp; Women's Quran Memorization House</div>
+                <div class="footer-brand__tag">Registered nonprofit organization · Afra, Balqarn Governorate, Asir Region, Saudi Arabia</div>
+              </div>
+            </div>
+            <dl class="footer-meta">
+              <div><dt>Waqf Certificate No.</dt><dd class="ltr-num">1112506318</dd></div>
+              <div><dt>Fundraising Permit</dt><dd>Pending issuance</dd></div>
+            </dl>
+          </div>
+          <div class="footer-legal">
+            <p>alforgan.org is owned and operated by Waqf Alforgan Charitable Endowment &amp; Women's Quran Memorization House — a registered nonprofit organization, Registration ID: 1112506318 — Afra, Balqarn, Saudi Arabia.</p>
+            <p>موقع alforgan.org مملوك ومُشغَّل من قِبل: وقف الفرقان الخيري ودار النسائية لتحفيظ القران — منظمة غير ربحية مسجلة، رقم التسجيل: 1112506318 — عفراء، بلقرن، المملكة العربية السعودية</p>
+            <p class="footer-copy">© Alforgan Endowment · All rights reserved</p>
+          </div>
         </div>
       </footer>
     </div>
