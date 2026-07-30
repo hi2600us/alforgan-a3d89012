@@ -35,7 +35,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"></noscript>
     <link rel="stylesheet" href="/assets/styles.css">
-    <link rel="stylesheet" href="/assets/redesign-v4.css">
+    <link rel="stylesheet" href="/assets/redesign-v5.css">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -110,11 +110,11 @@
       <!-- ============ HEADER ============ -->
       <header class="sticky top-0 z-50 backdrop-blur-md bg-background/80 border-b border-border/60">
         <nav class="max-w-7xl mx-auto px-6 lg:px-10 h-20 flex items-center justify-between gap-4">
-          <a href="#top" class="flex items-center gap-3 shrink-0">
-            <img src="/logo.webp" alt="وقف الفرقان" class="h-10 w-auto">
-            <div class="leading-tight">
-              <div class="font-display text-lg md:text-xl text-[color:var(--emerald-deep)]">وقف الفرقان الخيري</div>
-              <div class="text-[10px] tracking-[0.18em] uppercase text-muted-foreground">دار النسائية لتحفيظ القرآن · منظمة غير ربحية مسجلة</div>
+          <a href="#top" class="brand">
+            <img src="/logo.webp" alt="وقف الفرقان" class="brand__logo">
+            <div class="brand__text">
+              <div class="brand__name">وقف الفرقان الخيري</div>
+              <div class="brand__tag"><span class="brand__tag-long">دار النسائية لتحفيظ القرآن · </span>منظمة غير ربحية مسجلة</div>
             </div>
           </a>
           <div class="hidden lg:flex items-center gap-7 text-sm shrink-0">
@@ -125,7 +125,7 @@
             <a href="#faq" class="hover:text-[color:var(--emerald-deep)] transition">الأسئلة الشائعة</a>
             <a href="#trustee" class="hover:text-[color:var(--emerald-deep)] transition">النظارة</a>
           </div>
-          <div class="flex items-center gap-3 shrink-0">
+          <div class="nav-actions">
             <a href="/recite/" aria-label="اقرأ والبرنامج يستمع" title="اقرأ والبرنامج يستمع ويصحّح" class="hidden sm:inline-flex h-9 w-9 items-center justify-center rounded-md border border-border hover:border-[color:var(--gold)] hover:text-[color:var(--emerald-deep)] transition">
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19v3"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><rect x="9" y="2" width="6" height="13" rx="3"></rect></svg>
             </a>

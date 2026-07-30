@@ -624,3 +624,51 @@
 .footer-legal p { font-size: .72rem; line-height: 1.75; color: var(--muted-foreground); text-align: center; margin: 0; }
 .footer-legal p + p { margin-top: .4rem; }
 .footer-copy { margin-top: 1.5rem; font-size: .7rem; color: var(--muted-foreground); text-align: center; }
+
+/* ==========================================================================
+   v5 — mobile overflow fixes
+   ========================================================================== */
+
+/* Safety net: a single over-wide element should never make the whole
+   document horizontally scrollable. `clip` (not `hidden`) is used because
+   `hidden` creates a scroll container and breaks the sticky header. */
+body { overflow-x: clip; }
+
+/* ---- Header brand ----
+   The previous markup had shrink-0 on this block with a 50-character
+   subtitle, forcing the header to ~564px minimum. On a 380px phone that
+   overflowed by ~184px and pushed the whole RTL page sideways.
+   Everything here is allowed to shrink and truncate instead. */
+.brand { display: flex; align-items: center; gap: .75rem; min-width: 0; }
+.brand__logo { height: 2.5rem; width: auto; flex-shrink: 0; }
+.brand__text { min-width: 0; line-height: 1.25; }
+.brand__name {
+  font-family: var(--font-display);
+  color: var(--emerald-deep);
+  font-size: 1rem;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+@media (min-width: 640px) { .brand__name { font-size: 1.125rem; } }
+@media (min-width: 768px) { .brand__name { font-size: 1.25rem; } }
+.brand__tag {
+  margin-top: .15rem;
+  font-size: .5625rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--muted-foreground);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+@media (min-width: 640px) { .brand__tag { font-size: .625rem; letter-spacing: .18em; } }
+/* the longer half of the tagline appears only when there is room for it */
+.brand__tag-long { display: none; }
+@media (min-width: 640px) { .brand__tag-long { display: inline; } }
+
+/* Header action cluster must never be squeezed out */
+.nav-actions { display: flex; align-items: center; gap: .75rem; flex-shrink: 0; }
+
+/* ---- IBAN row: wrap cleanly on narrow screens instead of cramming ---- */
+.iban-row { flex-wrap: wrap; row-gap: .45rem; }
+@media (max-width: 560px) {
+  .iban-row > span:nth-of-type(2) { flex-basis: 100%; }
+  .iban-row .copy-btn { margin-inline-start: auto; }
+}
