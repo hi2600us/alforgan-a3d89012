@@ -17,9 +17,11 @@
 <link rel="icon" type="image/png" href="/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"></noscript>
 <link rel="stylesheet" href="/assets/styles.css">
-<link rel="stylesheet" href="/assets/redesign-v3.css">
+<link rel="stylesheet" href="/assets/redesign-v4.css">
 <style>
   /* utility absent from the precompiled stylesheet (no build step) */
   .hover\:underline:hover{text-decoration:underline}
@@ -76,7 +78,7 @@
   <header class="border-b border-border/60 bg-background/80 backdrop-blur-md sticky top-0 z-40">
     <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
       <a href="/" class="flex items-center gap-3">
-        <img src="/logo.png" alt="وقف الفرقان" class="h-8 w-auto">
+        <img src="/logo.webp" alt="وقف الفرقان" class="h-8 w-auto">
         <span class="font-display text-lg text-[color:var(--emerald-deep)]">وقف الفرقان</span>
       </a>
       <a href="/" class="text-sm text-muted-foreground hover:text-[color:var(--emerald-deep)]">← الرئيسية</a>
@@ -184,7 +186,7 @@
     <div class="sec-inner">
       <div class="footer-top">
         <div class="footer-brand">
-          <img src="/logo.png" alt="وقف الفرقان">
+          <img src="/logo.webp" alt="وقف الفرقان">
           <div>
             <div class="footer-brand__name">وقف الفرقان الخيري ودار النسائية لتحفيظ القرآن</div>
             <div class="footer-brand__tag">منظمة غير ربحية مسجلة · عفراء، محافظة بلقرن، منطقة عسير، المملكة العربية السعودية</div>

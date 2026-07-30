@@ -31,9 +31,11 @@
     <link rel="icon" type="image/png" href="/favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap">
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"></noscript>
     <link rel="stylesheet" href="/assets/styles.css">
-    <link rel="stylesheet" href="/assets/redesign-v3.css">
+    <link rel="stylesheet" href="/assets/redesign-v4.css">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -109,7 +111,7 @@
       <header class="sticky top-0 z-50 backdrop-blur-md bg-background/80 border-b border-border/60">
         <nav class="max-w-7xl mx-auto px-6 lg:px-10 h-20 flex items-center justify-between gap-4">
           <a href="#top" class="flex items-center gap-3 shrink-0">
-            <img src="/logo.png" alt="وقف الفرقان" class="h-10 w-auto">
+            <img src="/logo.webp" alt="وقف الفرقان" class="h-10 w-auto">
             <div class="leading-tight">
               <div class="font-display text-lg md:text-xl text-[color:var(--emerald-deep)]">وقف الفرقان الخيري</div>
               <div class="text-[10px] tracking-[0.18em] uppercase text-muted-foreground">دار النسائية لتحفيظ القرآن · منظمة غير ربحية مسجلة</div>
@@ -156,7 +158,7 @@
       <!-- ============ 1. HERO ============ -->
       <section id="top" class="sec sec--dark">
         <div class="absolute inset-0" style="background:var(--gradient-hero)"></div>
-        <div class="absolute inset-0 opacity-[0.07] mix-blend-overlay" style="background-image:url(/assets/pattern.jpg);background-size:400px"></div>
+        <div class="absolute inset-0 opacity-[0.07] mix-blend-overlay" style="background-image:url(/assets/pattern.webp);background-size:400px"></div>
         <div class="sec-inner relative">
           <div class="split split--even">
             <div>
@@ -183,7 +185,7 @@
             <div>
               <div class="relative">
                 <div class="absolute -inset-6 rounded-2xl opacity-25 blur-3xl" style="background:var(--gradient-gold)"></div>
-                <img src="/assets/furqan-building-clean.png" alt="التصور النهائي لمبنى وقف الفرقان في بلقرن" class="relative w-full h-auto block drop-shadow-[0_25px_45px_rgba(0,0,0,0.5)]" width="662" height="610">
+                <img src="/assets/furqan-building-clean.webp" fetchpriority="high" alt="التصور النهائي لمبنى وقف الفرقان في بلقرن" class="relative w-full h-auto block drop-shadow-[0_25px_45px_rgba(0,0,0,0.5)]" width="662" height="610">
               </div>
               <div class="flex justify-center mt-5">
                 <span class="hero-caption">التصور النهائي للمشروع</span>
@@ -203,7 +205,7 @@
           <div class="split split--top sec-body">
             <div>
               <div class="media">
-                <img src="/assets/quran-halaqat.jpg" alt="مصاحف موضوعة على رحلات خشبية في قاعة دار النسائية لتحفيظ القرآن" loading="lazy" width="1024" height="768">
+                <img src="/assets/quran-halaqat.webp" alt="مصاحف موضوعة على رحلات خشبية في قاعة دار النسائية لتحفيظ القرآن" loading="lazy" width="1024" height="768">
                 <div class="media__caption">دار النسائية لتحفيظ القرآن — النشاط الأساسي للوقف</div>
               </div>
             </div>
@@ -368,14 +370,14 @@
             <figure class="compare__item">
               <span class="compare__tag compare__tag--now">الموقع اليوم · المرحلة ٢</span>
               <div class="media">
-                <img src="/assets/furqan-building-skeleton.png" alt="صورة فعلية للموقع: الهيكل الإنشائي مكتمل وأعمال التشطيب جارية" loading="lazy" width="1376" height="768">
+                <img src="/assets/furqan-building-skeleton.webp" alt="صورة فعلية للموقع: الهيكل الإنشائي مكتمل وأعمال التشطيب جارية" loading="lazy" width="1376" height="768">
               </div>
               <figcaption class="compare__caption">صورة فعلية من الموقع: الهيكل الخرساني مكتمل بالكامل، والواجهات وأعمال التشطيب الداخلي قيد التنفيذ حالياً.</figcaption>
             </figure>
             <figure class="compare__item">
               <span class="compare__tag compare__tag--after">بعد الاكتمال</span>
               <div class="media media--contain media--render">
-                <img src="/assets/furqan-building-clean.png" alt="التصور المعماري النهائي لمبنى وقف الفرقان بعد الاكتمال" loading="lazy" width="662" height="610">
+                <img src="/assets/furqan-building-clean.webp" alt="التصور المعماري النهائي لمبنى وقف الفرقان بعد الاكتمال" loading="lazy" width="662" height="610">
               </div>
               <figcaption class="compare__caption">التصور المعماري النهائي بعد إتمام التشطيب والتجهيز — وهو ما يفصلنا عنه أحد عشر بنداً من الأعمال.</figcaption>
             </figure>
@@ -431,7 +433,7 @@
 
       <!-- ============ 7. IMPACT ============ -->
       <section class="sec sec--dark">
-        <img src="/assets/mosque-interior.jpg" alt="" loading="lazy" width="1024" height="1024" class="absolute inset-0 w-full h-full object-cover">
+        <img src="/assets/mosque-interior.webp" alt="" loading="lazy" width="1024" height="1024" class="absolute inset-0 w-full h-full object-cover">
         <div class="absolute inset-0" style="background:linear-gradient(180deg, oklch(0.18 0.04 160 / 0.92), oklch(0.22 0.06 160 / 0.88))"></div>
         <div class="sec-inner relative">
           <div class="sec-head sec-head--center sec-head--light">
@@ -648,7 +650,7 @@
         <div class="sec-inner">
           <div class="footer-top">
             <div class="footer-brand">
-              <img src="/logo.png" alt="وقف الفرقان">
+              <img src="/logo.webp" alt="وقف الفرقان">
               <div>
                 <div class="footer-brand__name">وقف الفرقان الخيري ودار النسائية لتحفيظ القرآن</div>
                 <div class="footer-brand__tag">منظمة غير ربحية مسجلة · عفراء، محافظة بلقرن، منطقة عسير، المملكة العربية السعودية</div>
@@ -667,6 +669,6 @@
         </div>
       </footer>
     </div>
-    <script src="/assets/redesign-v3.js"></script>
+    <script src="/assets/redesign-v4.js"></script>
   </body>
 </html>

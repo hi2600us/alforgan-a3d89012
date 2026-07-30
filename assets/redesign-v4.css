@@ -456,7 +456,7 @@
 .card--hero { background: var(--gradient-hero); color: var(--sand); border-color: color-mix(in oklab, var(--gold-soft) 20%, transparent); }
 .card__pattern {
   position: absolute; inset: 0; opacity: .05;
-  background-image: url(/assets/pattern.jpg); background-size: 260px;
+  background-image: url(/assets/pattern.webp); background-size: 260px;
   pointer-events: none;
 }
 .card__inner { position: relative; }
