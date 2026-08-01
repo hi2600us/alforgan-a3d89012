@@ -35,6 +35,10 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"></noscript>
     <link rel="stylesheet" href="/assets/app-v1.css">
+    <style>
+      /* utility absent from the precompiled stylesheet (no build step) */
+      .hover\:underline:hover{text-decoration:underline}
+    </style>
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -121,6 +125,7 @@
             <a href="#works" class="hover:text-[color:var(--emerald-deep)] transition">Works</a>
             <a href="#timeline" class="hover:text-[color:var(--emerald-deep)] transition">Timeline</a>
             <a href="#faq" class="hover:text-[color:var(--emerald-deep)] transition">FAQ</a>
+            <a href="/updates/" class="hover:text-[color:var(--emerald-deep)] transition">Updates</a>
             <a href="#trustee" class="hover:text-[color:var(--emerald-deep)] transition">Trustee</a>
           </div>
           <div class="nav-actions">
@@ -142,6 +147,7 @@
             <a href="#timeline" class="py-2.5 px-2 rounded-md hover:bg-muted hover:text-[color:var(--emerald-deep)] transition">Timeline</a>
             <a href="#works" class="py-2.5 px-2 rounded-md hover:bg-muted hover:text-[color:var(--emerald-deep)] transition">Finishing Works</a>
             <a href="#faq" class="py-2.5 px-2 rounded-md hover:bg-muted hover:text-[color:var(--emerald-deep)] transition">FAQ</a>
+            <a href="/updates/" class="py-2.5 px-2 rounded-md hover:bg-muted hover:text-[color:var(--emerald-deep)] transition">Latest updates</a>
             <a href="#partners" class="py-2.5 px-2 rounded-md hover:bg-muted hover:text-[color:var(--emerald-deep)] transition">Partners</a>
             <a href="#location" class="py-2.5 px-2 rounded-md hover:bg-muted hover:text-[color:var(--emerald-deep)] transition">Location</a>
             <a href="#trustee" class="py-2.5 px-2 rounded-md hover:bg-muted hover:text-[color:var(--emerald-deep)] transition">Trusteeship</a>
@@ -662,7 +668,7 @@
           <div class="footer-legal">
             <p>alforgan.org is owned and operated by Waqf Alforgan Charitable Endowment &amp; Women's Quran Memorization House — a registered nonprofit organization, Registration ID: 1112506318 — Afra, Balqarn, Saudi Arabia.</p>
             <p>موقع alforgan.org مملوك ومُشغَّل من قِبل: وقف الفرقان الخيري ودار النسائية لتحفيظ القران — منظمة غير ربحية مسجلة، رقم التسجيل: 1112506318 — عفراء، بلقرن، المملكة العربية السعودية</p>
-            <p class="footer-copy">© Alforgan Endowment · All rights reserved</p>
+            <p class="footer-copy">© Alforgan Endowment · All rights reserved · <a href="/updates/" class="hover:underline">Latest updates</a> · <a href="/privacy/" class="hover:underline">Privacy policy</a></p>
           </div>
         </div>
       </footer>

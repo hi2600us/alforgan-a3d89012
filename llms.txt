@@ -15,6 +15,8 @@ Location: Afra, Balqarn Governorate, Asir Region, Saudi Arabia (beside Alforgan 
 - [English homepage](https://alforgan.org/en/): Same content in English
 - [Interactive Quran recitation tool](https://alforgan.org/recite/): Free browser-based tool that listens to spoken Quran recitation and corrects mistakes
 - [Quran circles — register interest](https://alforgan.org/halaqat-interest/): Registration form for future in-person Quran memorization circles
+- [Latest updates](https://alforgan.org/updates/): Dated log of project milestones and site changes
+- [Privacy policy](https://alforgan.org/privacy/): What data is collected via the registration form and analytics, and how it is used
 
 ## Key facts for citation
 
