@@ -49,13 +49,51 @@
 </head>
 <body>
 <div class="min-h-screen bg-background text-foreground">
-  <header class="border-b border-border/60 bg-background/80 backdrop-blur-md sticky top-0 z-40">
-    <div class="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
-      <a href="/" class="flex items-center gap-3">
-        <img src="/logo.webp" alt="وقف الفرقان" class="h-8 w-auto">
-        <span class="font-display text-lg text-[color:var(--emerald-deep)]">وقف الفرقان</span>
+  <header class="sticky top-0 z-50 backdrop-blur-md bg-background/80 border-b border-border/60">
+    <nav class="max-w-7xl mx-auto px-6 lg:px-10 h-20 flex items-center justify-between gap-4">
+      <a href="/" class="brand">
+        <img src="/logo.webp" alt="وقف الفرقان" class="brand__logo">
+        <div class="brand__text">
+          <div class="brand__name">وقف الفرقان الخيري</div>
+          <div class="brand__tag"><span class="brand__tag-long">دار النسائية لتحفيظ القرآن · </span>منظمة غير ربحية مسجلة</div>
+        </div>
       </a>
-      <a href="/" class="text-sm text-muted-foreground hover:text-[color:var(--emerald-deep)]">← الرئيسية</a>
+      <div class="hidden lg:flex items-center gap-7 text-sm shrink-0">
+        <a href="/#mission" class="hover:text-[color:var(--emerald-deep)] transition">رسالتنا</a>
+        <a href="/#project" class="hover:text-[color:var(--emerald-deep)] transition">المشروع</a>
+        <a href="/#works" class="hover:text-[color:var(--emerald-deep)] transition">التشطيب</a>
+        <a href="/#timeline" class="hover:text-[color:var(--emerald-deep)] transition">الجدول الزمني</a>
+        <a href="/faq/" class="hover:text-[color:var(--emerald-deep)] transition">الأسئلة الشائعة</a>
+        <a href="/updates/" class="hover:text-[color:var(--emerald-deep)] transition">التحديثات</a>
+        <a href="/#trustee" class="hover:text-[color:var(--emerald-deep)] transition">النظارة</a>
+      </div>
+      <div class="nav-actions">
+        <a href="/recite/" aria-label="اقرأ والبرنامج يستمع" title="اقرأ والبرنامج يستمع ويصحّح" class="hidden sm:inline-flex h-9 w-9 items-center justify-center rounded-md border border-border hover:border-[color:var(--gold)] hover:text-[color:var(--emerald-deep)] transition">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19v3"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><rect x="9" y="2" width="6" height="13" rx="3"></rect></svg>
+        </a>
+        <a href="/en/" class="text-xs font-medium tracking-wider uppercase px-3 py-2 rounded-md border border-border hover:border-[color:var(--gold)] transition">EN</a>
+        <a href="/#donate" class="btn btn--gold btn--sm hidden sm:inline-flex">تبرع الآن</a>
+        <button aria-label="فتح القائمة" id="menu-btn" aria-expanded="false" class="lg:hidden inline-flex h-10 w-10 items-center justify-center rounded-md border border-border hover:border-[color:var(--gold)] transition">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16"></path><path d="M4 12h16"></path><path d="M4 19h16"></path></svg>
+        </button>
+      </div>
+    </nav>
+    <div id="mobile-menu" class="hidden lg:hidden border-t border-border/60 bg-background/95 backdrop-blur-md">
+      <div class="max-w-7xl mx-auto px-6 py-4 flex flex-col gap-1 text-sm">
+        <a href="/#mission" class="py-2.5 px-2 rounded-md hover:bg-muted hover:text-[color:var(--emerald-deep)] transition">رسالتنا وأنشطتنا</a>
+        <a href="/#project" class="py-2.5 px-2 rounded-md hover:bg-muted hover:text-[color:var(--emerald-deep)] transition">المشروع</a>
+        <a href="/about/" class="py-2.5 px-2 rounded-md hover:bg-muted hover:text-[color:var(--emerald-deep)] transition">قصة الوقف</a>
+        <a href="/#timeline" class="py-2.5 px-2 rounded-md hover:bg-muted hover:text-[color:var(--emerald-deep)] transition">الجدول الزمني</a>
+        <a href="/#works" class="py-2.5 px-2 rounded-md hover:bg-muted hover:text-[color:var(--emerald-deep)] transition">أعمال التشطيب</a>
+        <a href="/faq/" class="py-2.5 px-2 rounded-md hover:bg-muted hover:text-[color:var(--emerald-deep)] transition">الأسئلة الشائعة</a>
+        <a href="/updates/" class="py-2.5 px-2 rounded-md hover:bg-muted hover:text-[color:var(--emerald-deep)] transition">آخر التحديثات</a>
+        <a href="/#partners" class="py-2.5 px-2 rounded-md hover:bg-muted hover:text-[color:var(--emerald-deep)] transition">الشركاء</a>
+        <a href="/#location" class="py-2.5 px-2 rounded-md hover:bg-muted hover:text-[color:var(--emerald-deep)] transition">الموقع</a>
+        <a href="/#trustee" class="py-2.5 px-2 rounded-md hover:bg-muted hover:text-[color:var(--emerald-deep)] transition">النظارة</a>
+        <a href="/halaqat-interest/" class="py-2.5 px-2 rounded-md hover:bg-muted hover:text-[color:var(--emerald-deep)] transition">حلقات التحفيظ — سجّل اهتمامك</a>
+        <a href="/recite/" class="py-2.5 px-2 rounded-md hover:bg-muted hover:text-[color:var(--emerald-deep)] transition">تلاوة تفاعلية</a>
+        <a href="/#donate" class="btn btn--gold mt-2">تبرّع الآن</a>
+      </div>
     </div>
   </header>
 
@@ -119,10 +157,11 @@
       </div>
       <div class="footer-legal">
         <p>موقع alforgan.org مملوك ومُشغَّل من قِبل: وقف الفرقان الخيري ودار النسائية لتحفيظ القران — منظمة غير ربحية مسجلة، رقم التسجيل: 1112506318 — عفراء، بلقرن، المملكة العربية السعودية</p>
-        <p class="footer-copy">© وقف الفرقان · جميع الحقوق محفوظة · <a href="/" class="hover:underline">الصفحة الرئيسية</a> · <a href="/privacy/" class="hover:underline">سياسة الخصوصية</a></p>
+        <p class="footer-copy">© وقف الفرقان · جميع الحقوق محفوظة · <a href="/" class="hover:underline">الصفحة الرئيسية</a> · <a href="/about/" class="hover:underline">قصة الوقف</a> · <a href="/faq/" class="hover:underline">الأسئلة الشائعة</a> · <a href="/privacy/" class="hover:underline">سياسة الخصوصية</a></p>
       </div>
     </div>
   </footer>
 </div>
+<script src="/assets/redesign-v4.js"></script>
 </body>
 </html>
