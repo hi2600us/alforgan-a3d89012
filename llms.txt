@@ -18,6 +18,7 @@ Location: Afra, Balqarn Governorate, Asir Region, Saudi Arabia (beside Alforgan 
 - [About / the endowment's story](https://alforgan.org/about/): Founder's story, mission and activities, and waqf governance
 - [FAQ](https://alforgan.org/faq/): Full list of frequently asked questions
 - [Latest updates](https://alforgan.org/updates/): Dated log of project milestones and site changes
+- [Contact card](https://alforgan.org/card/): Official contact card — phone, WhatsApp, email, address, registration number, bank IBAN, downloadable contact (vCard) and QR code
 - [Privacy policy](https://alforgan.org/privacy/): What data is collected via the registration form and analytics, and how it is used
 
 ## Key facts for citation
