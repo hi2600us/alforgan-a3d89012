@@ -1,0 +1,17 @@
+/* GE SS Two — Arabic UI typeface for alforgan.org (self-hosted, subset woff2).
+   Arabic ranges only: this face draws 0-9 as Arabic-Indic digits and has no Latin,
+   so digits/Latin (phone, IBAN, email) fall through to Inter / system UI.
+   Loaded after app-v1.css. Quranic text keeps Amiri (.font-arabic / inline). */
+@font-face{font-family:"GE SS Two";src:url(/assets/fonts/ge-ss-two-300.woff2) format("woff2");font-weight:300 400;font-style:normal;font-display:swap;unicode-range:U+0020,U+00A0,U+0600-06FF,U+0750-077F,U+08A0-08FF,U+200C-200F,U+FB50-FDFF,U+FE70-FEFF}
+@font-face{font-family:"GE SS Two";src:url(/assets/fonts/ge-ss-two-500.woff2) format("woff2");font-weight:500 600;font-style:normal;font-display:swap;unicode-range:U+0020,U+00A0,U+0600-06FF,U+0750-077F,U+08A0-08FF,U+200C-200F,U+FB50-FDFF,U+FE70-FEFF}
+@font-face{font-family:"GE SS Two";src:url(/assets/fonts/ge-ss-two-700.woff2) format("woff2");font-weight:700 900;font-style:normal;font-display:swap;unicode-range:U+0020,U+00A0,U+0600-06FF,U+0750-077F,U+08A0-08FF,U+200C-200F,U+FB50-FDFF,U+FE70-FEFF}
+[dir=rtl]{
+  --font-arabic:"GE SS Two",Inter,system-ui,-apple-system,"Segoe UI",Tahoma,sans-serif;
+  --font-display:"GE SS Two",Inter,system-ui,-apple-system,"Segoe UI",Tahoma,sans-serif;
+  --font-sans:"GE SS Two",Inter,system-ui,-apple-system,"Segoe UI",Tahoma,sans-serif;
+}
+/* Arabic snippets inside the English page */
+[dir=ltr] [lang=ar]{font-family:"GE SS Two",Inter,system-ui,-apple-system,"Segoe UI",Tahoma,sans-serif}
+/* Quranic text stays in a naskh face with full tashkeel support */
+.font-arabic,.quran{font-family:Amiri,"Times New Roman",serif}
+[dir=rtl] .font-display{font-family:var(--font-display);letter-spacing:0}

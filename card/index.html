@@ -21,9 +21,9 @@
     <meta property="og:image" content="https://alforgan.org/og-image.jpg">
     <meta name="theme-color" content="#0f3b2c">
     <link rel="icon" type="image/png" href="/favicon.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap">
+    <link rel="preload" href="/assets/fonts/ge-ss-two-300.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/ge-ss-two-700.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="/assets/fonts-v1.css">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -48,8 +48,8 @@
         --emerald:#0f3b2c; --emerald-2:#1a5140; --gold:#c99a2e; --gold-soft:#ecdcb0;
         --ivory:#fbf8f1; --ink:#1b2a24; --muted:#5d6b64; --line:#e7dfcc;
         /* one variable controls the card typeface */
-        --card-font: "Segoe UI", Tahoma, "Noto Sans Arabic", system-ui, sans-serif;
-        --title-font: Amiri, "Times New Roman", serif;
+        --card-font: "GE SS Two",Inter,system-ui,-apple-system,"Segoe UI",Tahoma,sans-serif;
+        --title-font: "GE SS Two",Inter,system-ui,-apple-system,"Segoe UI",Tahoma,sans-serif;
       }
       *{box-sizing:border-box;margin:0}
       html{height:100%}
@@ -92,7 +92,8 @@
       .row__value{font-size:1rem;font-weight:600;color:var(--ink);word-break:break-word}
       .row__value a{text-decoration:none}
       .ltr{direction:ltr;unicode-bidi:isolate;display:inline-block}
-      .iban{font-size:.9rem;white-space:nowrap;letter-spacing:.01em}
+      .iban{font-size:.92rem;letter-spacing:.01em}
+      .iban .ltr{display:inline}
       .copy{flex:none;font:inherit;font-size:.8rem;color:var(--emerald);background:none;border:1px solid var(--line);
         border-radius:999px;padding:4px 12px;cursor:pointer}
 
